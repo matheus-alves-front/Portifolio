@@ -4,10 +4,10 @@ export function Header() {
   return (
     <header className={styles.Container}>
       <div className={styles.socialLinks}>
-        <a href="#">
+        <a href="https://github.com/matheus-alves-front">
           <img src="/assets/icons/github.png" alt="Linkedin logo" />
         </a>
-        <a className={styles.beta} href="#"> 
+        <a className={styles.beta} href="https://github.com/matheus-alves-front/Portifolio"> 
           <small> 
             In Development
           </small>
@@ -18,7 +18,9 @@ export function Header() {
         <a href={'#'}>Skills</a>
         <a href={'#'}>Achievements</a>
       </nav>
-      <button>Let's Connect</button>
+      <a href="https://www.linkedin.com/in/matheus-alves-pereira/" target="_blank">
+        <button>Let's Connect</button>
+      </a>
     </header>
   )
 }

@@ -61,13 +61,23 @@
     background-color: transparent;
     border: 1px solid $neutral-color-high-pure;
     border-radius: 20px;
-    margin-right: 1rem;
 
     @include transition-slow();
 
     &:hover {
       background-color: $neutral-color-high-pure;
       color: $neutral-color-low-pure;
+    }
+  }
+}
+
+@media (max-width: $mobile-small) {
+  .Container {
+    padding: 1rem 1.5rem;
+
+    .socialLinks {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }

@@ -13,13 +13,13 @@
 
 html,
 body {
+  min-height: 100vh;
   font-size: 16px;
   overflow-x: hidden;
   background-color: white !important;
   background-image: url('/backgrounds/bg-1.png');
-  background-size: 400%;
-  background-position: 60% 15%;
-  /* background-size: cover; */
+  background-size: cover;
+  background-position: 70% 10%;
   background-repeat: no-repeat;
 }
 

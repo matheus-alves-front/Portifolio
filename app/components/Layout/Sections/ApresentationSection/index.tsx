@@ -22,13 +22,13 @@ export function ApresentationSection() {
                 'Skater',
                 2000,
                 'Crazy',
-                2000,
-                'Spike-Lee',
-                2000,
-                'Choosen Boyz',
-                2000,
-                'Sly-Boogie',
                 2000
+                // 'Spike-Lee',
+                // 2000,
+                // 'Choosen Boyz',
+                // 2000,
+                // 'Sly-Boogie',
+                // 2000
               ]}
             />
           </span>

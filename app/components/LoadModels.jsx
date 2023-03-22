@@ -19,14 +19,18 @@ export function LoadModels() {
 
   useFrame((state, delta) => {
     // const angle = state.clock.elapsedTime * .05
-    camera.position.x = .3
-    camera.position.y = .5
-    camera.position.z = .6
+    camera.position.x = cameraPositionRef.current.x
+    camera.position.y = cameraPositionRef.current.y
+    camera.position.z = cameraPositionRef.current.z
 
     matheusRef.current.position.x = matheusPositionRef.current.x
     matheusRef.current.position.y = matheusPositionRef.current.y
 
-    camera.lookAt(.3,.5,0)
+    camera.lookAt(
+      cameraPositionRef.current.lookAtX,
+      cameraPositionRef.current.lookAtY,
+      0
+    )
   })
 
   useEffect(() => {
@@ -55,12 +59,28 @@ export function LoadModels() {
       matheusPositionRef.current.x  = .1
     } else {
       matheusPositionRef.current.x  = 0
+    } 
+    
+    if (windowWidth < 768) {
+      cameraPositionRef.current.x =  .15
+      cameraPositionRef.current.lookAtX =  .15
+    } else {
+      cameraPositionRef.current.x =  .3
+      cameraPositionRef.current.lookAtX =  .3
     }
   }
 
   const matheusPositionRef = useRef({
     y: -1.7,
     x: 0
+  })
+
+  const cameraPositionRef = useRef({
+    x: .3,
+    y: .5,
+    z: .6,
+    lookAtX: .3,
+    lookAtY: .5
   })
 
   return (
