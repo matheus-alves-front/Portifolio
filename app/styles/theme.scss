@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;700&family=Fira+Code:wght@500&display=swap');
+
+// Colors
+// -------------------------------------
+// Neutral
+$neutral-color-low-pure: #19191B;
+$neutral-color-low-light: #A3A3A3;
+$neutral-color-low-medium: #666666;
+$neutral-color-low-dark: #292929;
+$neutral-color-high-pure: #FFFFFF;
+$neutral-color-high-light: #F5F5F5;
+$neutral-color-high-medium: #E0E0E0;
+$neutral-color-high-dark: #CCCCCC;
+
+// Branding
+$primary-color-low-pure: #FF1EA7;
+$primary-color-low-light: #FFC7E9;
+$primary-color-low-medium: #FF8AD1;
+$primary-color-low-dark: #DF0087;
+// ------------------------------------
+// End Colors
+// ------------------------------------
+// Typography
+@mixin font-family-archivo() {
+  font-family: 'Archivo', sans-serif;
+}
+@mixin font-family-archivo-black() {
+  font-family: 'Archivo Black', sans-serif;
+}
+@mixin font-family-fira-code() {
+  font-family: 'Fira Code', monospace;
+}
+
+// Utilities
+@mixin transition-fast() {
+  transition: .1s ease;
+}
+
+@mixin transition-regular() {
+  transition: .3s ease;
+}
+
+@mixin transition-slow() {
+  transition: .5s ease;
+}
+
+// flex and grid
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+

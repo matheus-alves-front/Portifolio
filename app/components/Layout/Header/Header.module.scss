@@ -1,0 +1,57 @@
+@import '/app/styles/theme.scss';
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+
+  .socialLinks {
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+    }
+  }
+
+  nav {
+    @include font-family-fira-code();
+    @include flex-row();
+
+    a {
+      display: block;
+      color: $neutral-color-high-pure;
+      margin: 0 10px;
+      @include transition-fast();
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  button {
+    @include font-family-fira-code();
+    font-weight: 500;
+    padding: .5rem 1rem;
+
+    color: $neutral-color-high-pure;
+    background-color: transparent;
+    border: 1px solid $neutral-color-high-pure;
+    border-radius: 20px;
+    margin-right: 1rem;
+
+    @include transition-slow();
+
+    &:hover {
+      background-color: $neutral-color-high-pure;
+      color: $neutral-color-low-pure;
+    }
+  }
+}
