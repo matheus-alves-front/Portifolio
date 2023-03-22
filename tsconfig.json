@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/components/ScrollImage"  ],
   "exclude": [
     "node_modules"
   ]

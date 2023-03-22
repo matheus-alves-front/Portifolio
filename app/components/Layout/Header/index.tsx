@@ -7,8 +7,10 @@ export function Header() {
         <a href="#">
           <img src="/assets/icons/github.png" alt="Linkedin logo" />
         </a>
-        <a href="#"> 
-          <img src="/assets/icons/github.png" alt="Linkedin logo" />
+        <a className={styles.beta} href="#"> 
+          <small> 
+            In Development
+          </small>
         </a>
       </div>
       <nav>

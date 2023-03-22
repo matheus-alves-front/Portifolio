@@ -1,23 +1,20 @@
-
+/* ===== Scrollbar CSS ===== */
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scrollbar-width: 0px;
 }
 
 html,
 body {
   font-size: 16px;
-  max-width: 100vw;
   overflow-x: hidden;
-  /* position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%; */
   background-color: white !important;
   background-image: url('/backgrounds/bg-1.png');
   background-size: 400%;

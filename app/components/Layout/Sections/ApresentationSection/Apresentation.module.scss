@@ -1,7 +1,7 @@
 @import '/app/styles/theme.scss';
 
 .Container {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   padding: 2rem;
 
@@ -24,6 +24,8 @@
     nav {
       @include flex-row();
       justify-content: space-between;
+      position: relative;
+      z-index: 1;
 
       .writingLabel {
         font-size: 2rem;
@@ -37,6 +39,22 @@
         .skill {
           padding: .5rem;
           border: 1px solid $neutral-color-high-pure;
+          cursor: help;
+          @include transition-slow();
+
+          &:hover {
+            background-color: $neutral-color-high-pure;
+            color: $neutral-color-low-pure;
+          }
+
+          &.last {
+            transform: rotateZ(0deg);
+            cursor: pointer;
+
+            &:hover {
+              transform: rotateY(360deg);
+            }
+          }
         }
       }
     }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { OrbitControls } from '@react-three/drei'
 import { 
   useFrame,
@@ -23,14 +23,45 @@ export function LoadModels() {
     camera.position.y = .5
     camera.position.z = .6
 
+    matheusRef.current.position.x = matheusPositionRef.current.x
+    matheusRef.current.position.y = matheusPositionRef.current.y
+
     camera.lookAt(.3,.5,0)
   })
 
   useEffect(() => {
-    matheusRef.current.position.x = 0
-    matheusRef.current.position.y = -.2
+    getWindowSize()
+
+    matheusRef.current.position.x = matheusPositionRef.current.x
+    matheusRef.current.position.y = matheusPositionRef.current.y
     matheusRef.current.position.z = 0
+
+    window.addEventListener('resize', getWindowSize);
+
+    return () => window.removeEventListener('resize', getWindowSize);
   }, [])
+
+  function getWindowSize() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    if (windowHeight < 780) {
+      matheusPositionRef.current.y  = -1.8
+    } else {
+      matheusPositionRef.current.y  = -1.7
+    }
+
+    if (windowWidth < 1024) {
+      matheusPositionRef.current.x  = .1
+    } else {
+      matheusPositionRef.current.x  = 0
+    }
+  }
+
+  const matheusPositionRef = useRef({
+    y: -1.7,
+    x: 0
+  })
 
   return (
     <>
@@ -46,7 +77,11 @@ export function LoadModels() {
       <ambientLight intensity={1}/>
 
       <group ref={matheusRef}>
-        <Matheus scale={1.4} position-y={-1.5} />
+        <Matheus 
+          scale={1.4} 
+          position-y={0} 
+          position-x={0}
+        />
       </group>
     </>
   )

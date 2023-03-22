@@ -13,11 +13,27 @@
   top: 0;
 
   .socialLinks {
-    img {
-      width: 30px;
-      height: 30px;
-      margin: 0 5px;
+    @include flex-row();
+    align-items: center;
+
+    a {
+      display: block;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+      }
+      
+      &.beta {
+        @include font-family-fira-code();
+        color: $neutral-color-high-pure;
+        background-color: $primary-color-low-dark;
+        padding: .5rem;
+        border-radius: 10px;
+      }
     }
+
   }
 
   nav {

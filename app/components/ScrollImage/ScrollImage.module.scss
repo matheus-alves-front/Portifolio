@@ -1,0 +1,16 @@
+.img {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  animation: infinite spinner 11s linear;
+
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
