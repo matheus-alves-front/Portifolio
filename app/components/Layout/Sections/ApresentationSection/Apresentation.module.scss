@@ -97,9 +97,29 @@
 
 @media (max-width: $mobile-super-small) {
   .Container {
+    padding: .5rem;
+
     .content {
       h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
+      }
+
+      nav {
+        margin-bottom: .5rem;
+
+        .skillSet {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-ultra-small) {
+  .Container {
+    .content {
+      h1 {
+        font-size: 3.5rem;
       }
     }
   }
