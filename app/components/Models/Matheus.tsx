@@ -1,10 +1,25 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useGLTF, useAnimations, Text, Float } from "@react-three/drei";
+
 
 export function Matheus(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/3dModels/boneco-teste-1.glb");
   const { actions } = useAnimations(animations, group);
+
+  useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
+      const sw = window?.navigator?.serviceWorker
+
+      if (sw) {
+        sw.register("/sw.js", { scope: "/" }).then((registration) => {
+          console.log("Service Worker registration successful with scope: ", registration.scope);
+        }).catch((err) => {
+          console.log("Service Worker registration failed: ", err);
+        });
+      }
+    }
+  })
 
   useEffect(() => {
     console.log(actions)
