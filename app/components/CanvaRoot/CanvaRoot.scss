@@ -1,5 +1,7 @@
+@import '/app/styles/theme.scss';
+
 .CanvaRoot {
-  position: fixed;
+  @include z-index-priority(fixed, 2);
   width: 100%;
   height: 100%;
   top: 0;
@@ -10,6 +12,13 @@
   z-index: 0;
   // background-color: rgba(0,0,0,0.3);
   opacity: 1;
+  transition: 1s ease;
+
+  &.skills {
+    width: 30%;
+    height: 70%;
+    right: 42%;
+  }
 
   &::after {
     content: '';

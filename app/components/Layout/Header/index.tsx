@@ -15,7 +15,7 @@ export function Header() {
       </div>
       <nav>
         <a href={'#'}>Home</a>
-        <a href={'#'}>Skills</a>
+        <a href={'#skills'}>Skills</a>
         <a href={'#'}>Achievements</a>
       </nav>
       <a href="https://www.linkedin.com/in/matheus-alves-pereira/" target="_blank">

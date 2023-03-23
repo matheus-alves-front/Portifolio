@@ -1,5 +1,7 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
+import { useContext, useEffect } from 'react'
+import { HomeContext } from '../Context/HomeContext'
 
 import { 
   CineonToneMapping,
@@ -8,7 +10,7 @@ import {
 } from 'three'
 import { LoadModels } from '../LoadModels'
 
-import styles from './CanvaRoot.module.scss'
+import './CanvaRoot.scss'
 
 export function CanvaRoot() {
   const cameraSettings = {
@@ -19,9 +21,11 @@ export function CanvaRoot() {
     zoom: 1000
   }
 
+  const { step } = useContext(HomeContext)
+
   return (
     <section
-      className={styles.CanvaRoot}
+      className={`CanvaRoot ${step}`}
     >
       <Canvas
         orthographic

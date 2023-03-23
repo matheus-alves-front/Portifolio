@@ -9,12 +9,12 @@ export const metadata = {
   // PWA PRODUCTION
   // manifest: "/manifest.json",
   icons: {
-    icon: '/icons/nextjs-neon.png',
-    shortcut: '/icons/nextjs-neon.png',
-    apple: '/icons/nextjs-neon.png',
+    icon: 'assets/icons/nextjs-neon.png',
+    shortcut: 'assets/icons/nextjs-neon.png',
+    apple: 'assets/icons/nextjs-neon.png',
     other: {
-      rel: '/icons/nextjs-neon.png',
-      url: '/icons/nextjs-neon.png',
+      rel: 'assets/icons/nextjs-neon.png',
+      url: 'assets/icons/nextjs-neon.png',
     },
   }
 }

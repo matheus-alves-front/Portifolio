@@ -44,10 +44,21 @@ $primary-color-low-dark: #DF0087;
   transition: .5s ease;
 }
 
+@mixin z-index-priority($position, $index) {
+  position: $position;
+  z-index: $index;
+}
+
 // flex and grid
 @mixin flex-row() {
   display: flex;
   flex-direction: row;
+}
+
+// responsive
+@mixin responsive-section() {
+  max-width: 1440px;
+  margin: auto;
 }
 
 // Responsive Breakpoints

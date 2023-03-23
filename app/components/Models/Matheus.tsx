@@ -105,8 +105,8 @@ export function Matheus(props) {
               material={materials["Wolf3D_Glasses.001"]}
               skeleton={nodes.Wolf3D_3_Glasses.skeleton}
             />
-            
           </group> */}
+
           <group name="outfit-3">
             <skinnedMesh
               name="Wolf3D_3_Body"
