@@ -8,17 +8,18 @@ export function Matheus(props) {
   const { actions } = useAnimations(animations, group);
 
   useLayoutEffect(() => {
-    if (typeof window !== "undefined") {
-      const sw = window?.navigator?.serviceWorker
+    // PWA PRODUCTION
+    // if (typeof window !== "undefined") {
+    //   const sw = window?.navigator?.serviceWorker
 
-      if (sw) {
-        sw.register("/sw.js", { scope: "/" }).then((registration) => {
-          console.log("Service Worker registration successful with scope: ", registration.scope);
-        }).catch((err) => {
-          console.log("Service Worker registration failed: ", err);
-        });
-      }
-    }
+    //   if (sw) {
+    //     sw.register("/sw.js", { scope: "/" }).then((registration) => {
+    //       console.log("Service Worker registration successful with scope: ", registration.scope);
+    //     }).catch((err) => {
+    //       console.log("Service Worker registration failed: ", err);
+    //     });
+    //   }
+    // }
   })
 
   useEffect(() => {

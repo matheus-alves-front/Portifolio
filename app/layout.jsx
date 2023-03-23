@@ -6,7 +6,8 @@ export const metadata = {
   title: 'Matheus Alves Front-end',
   description: 'Seja bem Vindo ao meu Website PWA (App)',
   viewport: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover',
-  manifest: "/manifest.json",
+  // PWA PRODUCTION
+  // manifest: "/manifest.json",
   icons: {
     icon: '/icons/nextjs-neon.png',
     shortcut: '/icons/nextjs-neon.png',
