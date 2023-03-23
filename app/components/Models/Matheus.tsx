@@ -1,6 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, Text, Float } from "@react-three/drei";
 
+import type { Workbox } from "workbox-window";
+
+declare global {
+  interface Window {
+    workbox: Workbox;
+  }
+}
+
+
 export function Matheus(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/3dModels/boneco-teste-1.glb");
@@ -11,6 +20,16 @@ export function Matheus(props) {
     const action = actions.MixamoDefault
     action.play()
     // console.log(nodes)
+
+    if (typeof window !== "undefined") {
+      const sw = window?.navigator?.serviceWorker
+
+      if ("serviceWorker" in navigator && window.workbox !== undefined) {
+        const wb = window.workbox;
+        wb.register();
+        console.log('foi')
+      }
+    }
   }, [])
   
   return (

@@ -1,6 +1,7 @@
 import './globals.css'
 
 import { Header } from './components/Layout/Header'
+import Head from 'next/head'
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,6 +11,15 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="description" content="Best PWA App in the world" />
+        <link name="apple-touch-icon" href='/assets/icons/nextjs-neon.png'/>
+      </Head>
       <body>
         <Header />
         {children}
