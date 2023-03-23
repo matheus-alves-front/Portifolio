@@ -1,12 +1,11 @@
 {
-  "name": "PWA App",
-  "short_name": "App",
+  "name": "MATHEUS ALVES APP",
+  "short_name": "MATHEUSApp",
   "icons": [
     {
       "src": "/assets/iconsPwa/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/assets/iconsPwa/icon-384x384.png",
@@ -21,7 +20,10 @@
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#FF1EA7",
-  "start_url": "/",
-  "display": "standalone",
+  "scope": "/threejs",
+  "start_url": "/threejs",
+  "id": "/threejs",
+  "display": "fullscreen",
+  "offline_enabled": true,
   "orientation": "portrait"
 }

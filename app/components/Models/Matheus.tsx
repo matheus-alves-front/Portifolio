@@ -1,13 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useGLTF, useAnimations, Text, Float } from "@react-three/drei";
-
-import type { Workbox } from "workbox-window";
-
-declare global {
-  interface Window {
-    workbox: Workbox;
-  }
-}
 
 
 export function Matheus(props) {
@@ -15,21 +7,25 @@ export function Matheus(props) {
   const { nodes, materials, animations } = useGLTF("/3dModels/boneco-teste-1.glb");
   const { actions } = useAnimations(animations, group);
 
+  useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
+      const sw = window?.navigator?.serviceWorker
+
+      if (sw) {
+        sw.register("/sw.js", { scope: "/" }).then((registration) => {
+          console.log("Service Worker registration successful with scope: ", registration.scope);
+        }).catch((err) => {
+          console.log("Service Worker registration failed: ", err);
+        });
+      }
+    }
+  })
+
   useEffect(() => {
     console.log(actions)
     const action = actions.MixamoDefault
     action.play()
     // console.log(nodes)
-
-    if (typeof window !== "undefined") {
-      const sw = window?.navigator?.serviceWorker
-
-      if ("serviceWorker" in navigator && window.workbox !== undefined) {
-        const wb = window.workbox;
-        wb.register();
-        console.log('foi')
-      }
-    }
   }, [])
   
   return (
