@@ -14,7 +14,7 @@
 
   .socialLinks {
     @include flex-row();
-    align-items: center;
+    align-items: flex-start;
 
     a {
       display: block;
@@ -29,7 +29,7 @@
         @include font-family-fira-code();
         color: $neutral-color-high-pure;
         background-color: $primary-color-low-dark;
-        padding: .5rem;
+        padding: .3rem;
         border-radius: 10px;
       }
     }
@@ -39,11 +39,11 @@
   nav {
     @include font-family-fira-code();
     @include flex-row();
+    gap: 1rem;
 
     a {
       display: block;
       color: $neutral-color-high-pure;
-      margin: 0 10px;
       @include transition-fast();
 
       &:hover {
@@ -78,14 +78,19 @@
     gap: .2rem;
 
     .socialLinks {
-      width: 100%;
+      order: 2;
       margin-bottom: 5px;
     }
 
     nav { 
-      a {
-        margin: 0 5px;
-      }
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    > a {
+      order: 1;
     }
   }
 }

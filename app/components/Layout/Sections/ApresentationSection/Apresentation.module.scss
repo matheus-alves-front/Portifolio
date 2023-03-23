@@ -121,6 +121,15 @@
       h1 {
         font-size: 3.5rem;
       }
+
+      nav {
+        .skillSet {
+          .skill {
+            padding: .3rem;
+            font-size: .9rem;
+          }
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import './globals.css'
+import './styles/globals.scss'
 
 import { Header } from './components/Layout/Header'
 
@@ -7,7 +7,15 @@ export const metadata = {
   description: 'Seja bem Vindo ao meu Website PWA (App)',
   viewport: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover',
   manifest: "/manifest.json",
-  icon: '/icons/nextjs-neon.png'
+  icons: {
+    icon: '/icons/nextjs-neon.png',
+    shortcut: '/icons/nextjs-neon.png',
+    apple: '/icons/nextjs-neon.png',
+    other: {
+      rel: '/icons/nextjs-neon.png',
+      url: '/icons/nextjs-neon.png',
+    },
+  }
 }
 
 export default async function RootLayout({ children }) {

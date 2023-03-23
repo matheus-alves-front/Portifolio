@@ -453,9 +453,9 @@
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#FF1EA7",
-  "scope": "/threejs",
-  "start_url": "/threejs",
-  "id": "/threejs",
+  "scope": "/",
+  "start_url": "/",
+  "id": "/",
   "display": "fullscreen",
   "offline_enabled": true,
   "orientation": "portrait"
