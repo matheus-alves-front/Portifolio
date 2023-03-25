@@ -6,7 +6,6 @@ import {
   useThree
 } from '@react-three/fiber'
 import { CanvaContext } from '../Context/CanvaContext'
-import { useControls } from 'leva'
 import { PageContext } from '../Context/PageContext'
 
 export function AnimatedCamera() {
@@ -20,21 +19,6 @@ export function AnimatedCamera() {
   const {camera} = useThree()
 
   const {step} = useContext(PageContext)
-
-  const { cameraZoom, cameraPosition } = useControls({
-    perfVisible: false,
-    cameraPosition: {
-      value: {
-        x: cameraPositionRef.current.x,
-        y: cameraPositionRef.current.y,
-        z: cameraPositionRef.current.z
-      }
-    },
-    cameraZoom: {
-      value: cameraPositionRef.current.zoom,
-      step: 1
-    }
-  })
 
   const cameraPositionAnimation = new THREE.Vector3()
 
@@ -68,9 +52,9 @@ export function AnimatedCamera() {
     <PerspectiveCamera  
         ref={cameraRef}
         position={[
-              cameraPosition.x,
-              cameraPosition.y,
-              cameraPosition.z
+              cameraPositionRef.current.x,
+              cameraPositionRef.current.y,
+              cameraPositionRef.current.z
         ]} 
         makeDefault 
         // zoom={cameraPositionRef.current.zoom}
