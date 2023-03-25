@@ -1,14 +1,13 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useGLTF, useAnimations, Text, Float } from "@react-three/drei";
 
-
 export function Matheus(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/3dModels/boneco-teste-1.glb");
   const { actions } = useAnimations(animations, group);
 
+  // PWA PRODUCTION
   useLayoutEffect(() => {
-    // PWA PRODUCTION
     // if (typeof window !== "undefined") {
     //   const sw = window?.navigator?.serviceWorker
 
@@ -22,11 +21,10 @@ export function Matheus(props) {
     // }
   })
 
+  // Play Actions
   useEffect(() => {
-    console.log(actions)
     const action = actions.MixamoDefault
     action.play()
-    // console.log(nodes)
   }, [])
   
   return (
@@ -73,41 +71,42 @@ export function Matheus(props) {
             morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
           />
 
-{/* 
-          <group name="outfit-1">
-            <skinnedMesh
-              name="Wolf3D_1_Body"
-              geometry={nodes.Wolf3D_1_Body.geometry}
-              material={materials["Wolf3D_Body.002"]}
-              skeleton={nodes.Wolf3D_1_Body.skeleton}
-            />
-            <skinnedMesh
-              name="Wolf3D_1_Outfit_Bottom"
-              geometry={nodes.Wolf3D_1_Outfit_Bottom.geometry}
-              material={materials["Wolf3D_Outfit_Bottom.002"]}
-              skeleton={nodes.Wolf3D_1_Outfit_Bottom.skeleton}
-            />
-            <skinnedMesh
-              name="Wolf3D_1_Outfit_Top"
-              geometry={nodes.Wolf3D_1_Outfit_Top.geometry}
-              material={materials["Wolf3D_Outfit_Top.002"]}
-              skeleton={nodes.Wolf3D_1_Outfit_Top.skeleton}
-            />
-            <skinnedMesh
-              name="Wolf3D_1_Outfit_Footwear"
-              geometry={nodes.Wolf3D_1_Outfit_Footwear.geometry}
-              material={materials["Wolf3D_Outfit_Footwear.002"]}
-              skeleton={nodes.Wolf3D_1_Outfit_Footwear.skeleton}
-            />
-            <skinnedMesh
-              name="Wolf3D_3_Glasses"
-              geometry={nodes.Wolf3D_3_Glasses.geometry}
-              material={materials["Wolf3D_Glasses.001"]}
-              skeleton={nodes.Wolf3D_3_Glasses.skeleton}
-            />
-          </group> */}
+          
+            <group name="outfit-1">
+              <skinnedMesh
+                name="Wolf3D_1_Body"
+                geometry={nodes.Wolf3D_1_Body.geometry}
+                material={materials["Wolf3D_Body.002"]}
+                skeleton={nodes.Wolf3D_1_Body.skeleton}
+              />
+              <skinnedMesh
+                name="Wolf3D_1_Outfit_Bottom"
+                geometry={nodes.Wolf3D_1_Outfit_Bottom.geometry}
+                material={materials["Wolf3D_Outfit_Bottom.002"]}
+                skeleton={nodes.Wolf3D_1_Outfit_Bottom.skeleton}
+              />
+              <skinnedMesh
+                name="Wolf3D_1_Outfit_Top"
+                geometry={nodes.Wolf3D_1_Outfit_Top.geometry}
+                material={materials["Wolf3D_Outfit_Top.002"]}
+                skeleton={nodes.Wolf3D_1_Outfit_Top.skeleton}
+              />
+              <skinnedMesh
+                name="Wolf3D_1_Outfit_Footwear"
+                geometry={nodes.Wolf3D_1_Outfit_Footwear.geometry}
+                material={materials["Wolf3D_Outfit_Footwear.002"]}
+                skeleton={nodes.Wolf3D_1_Outfit_Footwear.skeleton}
+              />
+              <skinnedMesh
+                name="Wolf3D_3_Glasses"
+                geometry={nodes.Wolf3D_3_Glasses.geometry}
+                material={materials["Wolf3D_Glasses.001"]}
+                skeleton={nodes.Wolf3D_3_Glasses.skeleton}
+              />
+            </group> 
+         
 
-          <group name="outfit-3">
+          {/* <group name="outfit-3">
             <skinnedMesh
               name="Wolf3D_3_Body"
               geometry={nodes.Wolf3D_3_Body.geometry}
@@ -138,7 +137,7 @@ export function Matheus(props) {
               material={materials["Wolf3D_Outfit_Footwear.001"]}
               skeleton={nodes.Wolf3D_3_Outfit_Footwear.skeleton}
             />
-          </group>
+          </group> */}
 
           
         </group>

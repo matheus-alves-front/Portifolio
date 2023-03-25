@@ -1,43 +1,38 @@
 "use client"
+import { useContext, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useContext, useEffect } from 'react'
-import { HomeContext } from '../Context/HomeContext'
+// import { Perf } from 'r3f-perf'
 
-import { 
-  CineonToneMapping,
-  ACESFilmicToneMapping,
-  LinearEncoding
-} from 'three'
-import { LoadModels } from '../LoadModels'
+import { CanvaContextProvider } from '../Context/CanvaContext'
+import { PageContext } from '../Context/PageContext'
+import { LoadModels } from '../Models/LoadModels'
+import {AnimatedCamera} from '../Models/Camera'
 
 import './CanvaRoot.scss'
 
 export function CanvaRoot() {
-  const cameraSettings = {
-    fov: 45,
-    near: .1,
-    far: 200,
-    position: [3,2,6],
-    zoom: 1000
-  }
-
-  const { step } = useContext(HomeContext)
+  const { step } = useContext(PageContext)
 
   return (
-    <section
-      className={`CanvaRoot ${step}`}
+    <section className={`CanvaRoot ${step}`}
     >
-      <Canvas
-        orthographic
-        // flat
-        dpr={[1, 2]}
-        gl={{
-          antialias: true,
-          // toneMapping: LinearEncoding
-        }}
-        camera={cameraSettings}
-      >
-        <LoadModels />
+      <Canvas gl={{ antialias: true, }} camera={{manual: true}}>
+        <CanvaContextProvider>
+          <LoadModels />
+
+          <AnimatedCamera />
+          {/* {perfVisible ? <Perf position={'bottom-right'} /> : null} */}
+          {/* 
+            Lights
+          */}
+          <directionalLight
+            position={[ 1,1,0 ]} 
+            color="white" 
+            intensity={4}
+            // castShadow 
+          />
+          <ambientLight intensity={1}/>
+        </CanvaContextProvider>
       </Canvas>
     </section>
   )

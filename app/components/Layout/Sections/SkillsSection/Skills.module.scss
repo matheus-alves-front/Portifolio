@@ -7,7 +7,7 @@
   @include flex-row();
   align-items: center;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 
   .container {
     width: 100%;
@@ -73,6 +73,14 @@
       }
     }
   }
+}
 
-
+@media (max-width: $mobile) {
+  .Skills {
+    .container {
+      grid-template-columns: 1fr;
+      height: 100%;
+      align-items: flex-end;
+    }
+  }
 }

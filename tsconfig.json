@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/components/ScrollImage"  ],
+, "app/components/Layout/ScrollImage", "app/components/Context/CanvaContext.jsx", "app/components/Context/PageContext.tsx"  ],
   "exclude": [
     "node_modules"
   ]

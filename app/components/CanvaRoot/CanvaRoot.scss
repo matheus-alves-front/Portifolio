@@ -1,5 +1,15 @@
 @import '/app/styles/theme.scss';
 
+@keyframes opacityTransitionSkills {
+  from {opacity: 0}
+  to {opacity: 1;}
+}
+
+@keyframes opacityTransitionHome {
+  from {opacity: 0}
+  to {opacity: 1;}
+}
+
 .CanvaRoot {
   @include z-index-priority(fixed, 2);
   width: 100%;
@@ -12,15 +22,41 @@
   z-index: 0;
   // background-color: rgba(0,0,0,0.3);
   opacity: 1;
-  transition: 1s ease;
+  background-image: url('/backgrounds/bg-1.png');
+  background-size: cover;
+  background-position: 70% 10%;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+
+  &.home {
+    opacity: 0;
+    animation: opacityTransitionHome;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
 
   &.skills {
-    width: 30%;
-    height: 70%;
-    right: 42%;
+    transition-delay: 0s, 0s, .5s;
+    transition-property: width, height, z-index;
+    width: 50%;
+    height: 50%;
+    right: 50%;
+    
+    opacity: 0;
+    animation: opacityTransitionSkills;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+
+    &::after {
+      background-color: transparent;
+    }
   }
 
   &::after {
+    transition: 1s ease;
     content: '';
     position: absolute;
     top: 0;
@@ -28,5 +64,14 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.4);
+  }
+}
+
+@media (max-width: $mobile) {
+  .CanvaRoot {
+    &.skills {
+      width: 100%;
+      bottom: auto;
+    }
   }
 }
