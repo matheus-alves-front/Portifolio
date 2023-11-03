@@ -9,15 +9,18 @@ export const metadata: Metadata = {
   title: 'Matheus Alves Front-end',
   description: 'Seja bem Vindo ao meu Website PWA (App)',
   manifest: "/manifest.json",
-  icons: {
-    icon: '/assets/foto-perfil.jpg',
-    shortcut: '/assets/foto-perfil.jpg',
-    apple: '/assets/foto-perfil.jpg',
-    other: {
-      rel: '/assets/foto-perfil.jpg',
-      url: '/assets/foto-perfil.jpg',
-    },
+  openGraph: {
+    images: '/assets/foto-perfil.jpg' 
   },
+  icons: {
+    icon: '/icons/nextjs-neon.png',
+    shortcut: '/icons/nextjs-neon.png',
+    apple: '/icons/nextjs-neon.png',
+    other: {
+      rel: '/icons/nextjs-neon.png',
+      url: '/icons/nextjs-neon.png',
+    },
+  }
 }
 
 export const viewport: Viewport = {
