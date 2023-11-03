@@ -1,7 +1,7 @@
 
 import { forwardRef, useState } from "react";
 import styles from './Career.module.scss'
-import { archivoBlackFont, archivoFont, firaCodeFont } from "@/app/utils/nextFonts";
+import { archivoBlackFont, archivoFont } from "@/app/utils/nextFonts";
 
 const CAREER_RESUME = [
   {

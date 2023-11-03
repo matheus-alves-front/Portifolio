@@ -1,7 +1,7 @@
 "use client"
 import Typical from 'react-typical'
 import styles from './Apresentation.module.scss'
-import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { archivoBlackFont, archivoFont } from '@/app/utils/nextFonts'
 
 

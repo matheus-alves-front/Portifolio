@@ -2,7 +2,7 @@
 import styles from './Skills.module.scss'
 import { motion } from "framer-motion"
 import { SkillItem } from './SkillItem'
-import { LegacyRef, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { archivoBlackFont, firaCodeFont } from '@/app/utils/nextFonts'
 
 const Skills = [

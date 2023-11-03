@@ -15,6 +15,7 @@
 
   @media (max-width: $mobile-small) {
     grid-template-columns: auto;
+    padding: 1rem;
   }
 
 
@@ -26,6 +27,7 @@
 
     @media (max-width: $mobile) {
       color: $neutral-color-high-pure;
+      font-size: 4rem;
     }
   }
 
@@ -43,6 +45,10 @@
     border-radius: 10px;
     scrollbar-width: auto;
     scrollbar-color: #ffffff #000000;
+
+    @media (max-width: $mobile-small) {
+      width: 100%;
+    }
 
     &::-webkit-scrollbar {
       width: 4px;
