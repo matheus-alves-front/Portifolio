@@ -1,6 +1,7 @@
 
 import { forwardRef, useState } from "react";
 import styles from './Career.module.scss'
+import { archivoBlackFont, archivoFont, firaCodeFont } from "@/app/utils/nextFonts";
 
 const CAREER_RESUME = [
   {
@@ -157,9 +158,9 @@ export const CareerSection = forwardRef<HTMLDivElement>(function CareerSection(p
   const [yearIndex, setYearIndex] = useState(0)
 
   return (
-    <section id="experiences" className={styles.Container}>
-      <h2>EXPERIENCES</h2>
-      <nav  className={styles.yearsButtons}>
+    <section id="experiences" className={`${styles.Container}`}>
+      <h2 className={archivoBlackFont.className}>EXPERIENCES</h2>
+      <nav className={`${styles.yearsButtons}`}>
         {CAREER_RESUME.map((item, index) => (
           <button 
             key={index}
@@ -167,7 +168,7 @@ export const CareerSection = forwardRef<HTMLDivElement>(function CareerSection(p
               setActualYear(item.year)
               setYearIndex(index)
             }}
-            className={actualYear === item.year ? styles.active : ''}
+            className={`${actualYear === item.year ? styles.active : ''} ${archivoFont.className}`}
           >
             {item.year}
           </button>

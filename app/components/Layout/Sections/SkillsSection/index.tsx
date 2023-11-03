@@ -3,6 +3,7 @@ import styles from './Skills.module.scss'
 import { motion } from "framer-motion"
 import { SkillItem } from './SkillItem'
 import { LegacyRef, forwardRef } from 'react'
+import { archivoBlackFont, firaCodeFont } from '@/app/utils/nextFonts'
 
 const Skills = [
   {
@@ -131,8 +132,9 @@ export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(p
           opacity: 1
         }}
         transition={{ delay: .4 }}
+        className={firaCodeFont.className}
       >
-        <h2>SKILLS</h2>
+        <h2 className={archivoBlackFont.className}>SKILLS</h2>
         <div ref={ref} className={styles.skills}>
          {Skills.map((item, index) => (
           <SkillItem 

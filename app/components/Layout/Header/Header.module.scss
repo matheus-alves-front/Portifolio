@@ -26,7 +26,6 @@
       }
       
       &.beta {
-        @include font-family-fira-code();
         color: $neutral-color-high-pure;
         background-color: $primary-color-low-dark;
         padding: .3rem;
@@ -37,7 +36,6 @@
   }
 
   nav {
-    @include font-family-fira-code();
     @include flex-row();
     gap: 1rem;
 
@@ -53,7 +51,6 @@
   }
 
   button {
-    @include font-family-fira-code();
     font-weight: 500;
     padding: .5rem 1rem;
 

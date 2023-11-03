@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: flex-end;
-  @include font-family-archivo();
 
 
   color: $neutral-color-high-pure;
@@ -17,7 +16,6 @@
     margin-bottom: 2rem;
     
     h1 {
-      @include font-family-archivo-black();
       font-size: 10rem;
       line-height: .9;
       text-transform: uppercase;

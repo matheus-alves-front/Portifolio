@@ -2,6 +2,8 @@
 import Typical from 'react-typical'
 import styles from './Apresentation.module.scss'
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion"
+import { archivoBlackFont, archivoFont } from '@/app/utils/nextFonts'
+
 
 export function ApresentationSection() {
   const { scrollY } = useScroll()
@@ -14,6 +16,7 @@ export function ApresentationSection() {
       <div className={styles.content}>
         <motion.nav
           style={{x: scrollY}}
+          className={archivoFont.className}
         >
           <span
             className={styles.writingLabel}
@@ -47,7 +50,12 @@ export function ApresentationSection() {
             <span className={`${styles.skill} ${styles.last}`}>More +</span>
           </div>
         </motion.nav>
-        <motion.h1 style={{x: scrollYReverse}}>Matheus Alves</motion.h1>
+        <motion.h1 
+          style={{x: scrollYReverse}}
+          className={archivoBlackFont.className}
+        >
+          Matheus Alves
+        </motion.h1>
       </div>
     </section>
   )

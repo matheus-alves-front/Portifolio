@@ -1,8 +1,9 @@
+import { firaCodeFont } from '@/app/utils/nextFonts'
 import styles from './Header.module.scss'
 
 export function Header() {
   return (
-    <header className={styles.Container}>
+    <header className={`${styles.Container} ${firaCodeFont.className}`}>
       <div className={styles.socialLinks}>
         <a href="https://github.com/matheus-alves-front">
           <img src="/assets/icons/github.png" alt="Linkedin logo" />

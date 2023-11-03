@@ -14,7 +14,6 @@
   }
 
   h2 {
-    @include font-family-archivo-black();
     color: $neutral-color-high-light;
     font-size: 4rem;
   }
@@ -30,7 +29,6 @@
     gap: 10px;
 
     button {
-      @include font-family-archivo();
       @include transition-fast();
       background-color: transparent;
       border: 0;
