@@ -14,22 +14,41 @@
 
   .socialLinks {
     @include flex-row();
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
 
     a {
       display: block;
-
-      img {
-        width: 30px;
-        height: 30px;
-        margin: 0 5px;
-      }
       
       &.beta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        @include transition-slow();
+
+        padding: .2rem .4rem;
+        border-radius: 5px;
         color: $neutral-color-high-pure;
         background-color: $primary-color-low-dark;
-        padding: .3rem;
-        border-radius: 10px;
+
+        .betaIcon {
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          background-color: $neutral-color-high-pure;
+          color: $primary-color-low-dark;
+        }
+      }
+
+      &.downloadCV {
+        color: $neutral-color-high-pure;
+        font-size: .8rem;
+
+        &:hover {
+          text-decoration: underline
+        }
       }
     }
 
@@ -50,20 +69,31 @@
     }
   }
 
-  button {
-    font-weight: 500;
-    padding: .5rem 1rem;
+  .linkedin {
+    button {
+      font-weight: 600;
+      padding: .5rem 1rem;
+      font-size: 1rem;
 
-    color: $neutral-color-high-pure;
-    background-color: transparent;
-    border: 1px solid $neutral-color-high-pure;
-    border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+  
+      color: $neutral-color-high-pure;
+      background-color: transparent;
+      border: 1px solid $neutral-color-high-pure;
+      border-radius: 20px;
+  
+      @include transition-slow();
+  
+      &:hover {
+        background-color: $neutral-color-high-pure;
+        color: $neutral-color-low-pure;
+      }
 
-    @include transition-slow();
-
-    &:hover {
-      background-color: $neutral-color-high-pure;
-      color: $neutral-color-low-pure;
+      @media (max-width: $mobile-small) {
+        font-size: .8rem;  
+      }
     }
   }
 }

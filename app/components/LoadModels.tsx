@@ -63,25 +63,6 @@ export function LoadModels() {
   })
 
   useEffect(() => {
-    // @ts-ignore
-    matheusRef.current.position.x = matheusPositionRef.x
-    // @ts-ignore
-    matheusRef.current.position.y = matheusPositionRef.y
-    // @ts-ignore
-    matheusRef.current.position.z = 0
-
-    camera.position.x = CameraControls.x
-    camera.position.y = CameraControls.y
-    camera.position.z = CameraControls.z
-    // camera.far = CameraControls.far
-    // camera.zoom = CameraControls.zoom
-
-    camera.lookAt(
-      CameraControls.lookAtX,
-      CameraControls.lookAtY,
-      0
-    )
-
     getWindowSize()
 
     window.addEventListener('resize', getWindowSize);

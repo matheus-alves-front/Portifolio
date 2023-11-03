@@ -1,17 +1,27 @@
 import { firaCodeFont } from '@/app/utils/nextFonts'
 import styles from './Header.module.scss'
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 
 export function Header() {
   return (
     <header className={`${styles.Container} ${firaCodeFont.className}`}>
       <div className={styles.socialLinks}>
-        <a href="https://github.com/matheus-alves-front">
-          <img src="/assets/icons/github.png" alt="Linkedin logo" />
-        </a>
-        <a className={styles.beta} href="https://github.com/matheus-alves-front/Portifolio"> 
+        <a 
+          className={styles.beta} 
+          target="_blank"
+          href="https://github.com/matheus-alves-front"
+        > 
+          <IoLogoGithub className={styles.betaIcon} />
           <small> 
-            In Development
+            Github
           </small>
+        </a>
+        <a 
+          className={styles.downloadCV}
+          href='/downloads/CV-english.pdf'
+          download={'CV-MATHEUS'}
+        >
+          Download CV
         </a>
       </div>
       <nav>
@@ -19,8 +29,15 @@ export function Header() {
         <a href={'#skills'}>Skills</a>
         <a href={'#experiences'}>Experiences</a>
       </nav>
-      <a href="https://www.linkedin.com/in/matheus-alves-pereira/" target="_blank">
-        <button>Let's Connect</button>
+      <a 
+        className={`${styles.linkedin} ${firaCodeFont.className}`} 
+        href="https://www.linkedin.com/in/matheus-alves-pereira/" 
+        target="_blank"
+      >
+        <button>
+          <IoLogoLinkedin /> 
+          Linkedin
+        </button>
       </a>
     </header>
   )
