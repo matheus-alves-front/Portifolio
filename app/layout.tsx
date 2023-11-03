@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   description: 'Seja bem Vindo ao meu Website PWA (App)',
   manifest: "/manifest.json",
   icons: {
-    icon: '/icons/nextjs-neon.png',
-    shortcut: '/icons/nextjs-neon.png',
-    apple: '/icons/nextjs-neon.png',
+    icon: '/assets/foto-perfil.jpg',
+    shortcut: '/assets/foto-perfil.jpg',
+    apple: '/assets/foto-perfil.jpg',
     other: {
-      rel: '/icons/nextjs-neon.png',
-      url: '/icons/nextjs-neon.png',
+      rel: '/assets/foto-perfil.jpg',
+      url: '/assets/foto-perfil.jpg',
     },
-  }
+  },
 }
 
 export const viewport: Viewport = {

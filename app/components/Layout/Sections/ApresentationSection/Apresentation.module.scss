@@ -9,6 +9,10 @@
   grid-template-columns: 1fr 1fr;
   align-items: flex-end;
 
+  @media (max-width: $mobile-small) {
+    height: 100dvh;
+  }
+
 
   color: $neutral-color-high-pure;
 
