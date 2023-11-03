@@ -3,6 +3,8 @@ import { Metadata, Viewport } from 'next'
 import { Header } from './components/Layout/Header'
 import { ReactNode } from 'react'
 
+export const runtime = 'edge'
+
 export const metadata: Metadata = {
   title: 'Matheus Alves Front-end',
   description: 'Seja bem Vindo ao meu Website PWA (App)',

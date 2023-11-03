@@ -16,8 +16,16 @@
 
   transition: background-color 1s;
 
+  background-image: url('/backgrounds/bg-1.png');
+  background-color: $neutral-color-low-dark;
+  background-size: cover;
+  background-position: 70% 10%;
+  background-repeat: no-repeat;
+
   &.SkillSection {
-    background-color: #fff;
+    background-color: $neutral-color-high-dark;
+    background-image: url('/backgrounds/background.png');
+    background-image: none;
   }
 
   &.CareerSection {
