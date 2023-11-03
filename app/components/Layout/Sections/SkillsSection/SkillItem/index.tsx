@@ -25,15 +25,21 @@ export function SkillItem({
       className={styles.skill}
       onClick={handleTexts}
     >
-      <h5 className={isTexts ? styles.clicked : ''}>{name}</h5>
-      <div 
-        className={`${styles.skillLevel} ${isTexts ? styles.clicked : ''}`}
-        style={{
-          width: level
-        }}
-      >
+      <h5 className={isTexts ? styles.clicked : ''}>
+        {name}
+        <br />
+        <small>Level {level.replace('%', '')}</small>
+      </h5>
+      <div className={`${styles.skillLevelContent} ${isTexts ? styles.clicked : ''}`}>
+        <div 
+          className={`${styles.skillLevel}`}
+          style={{
+            width: level
+          }}
+        >
+        </div>
         {texts.map((text, index) => (
-          <p key={index} className={styles.clicked}>
+          <p key={index} className={isTexts ? styles.clicked : ''}>
             {text}
           </p>
         ))}
