@@ -2,8 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useGLTF, useAnimations, Text, Float } from "@react-three/drei";
 
 
-export function Matheus(props) {
+export function Matheus(props: any) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials, animations } = useGLTF("/3dModels/boneco-teste-1.glb");
   const { actions } = useAnimations(animations, group);
 
@@ -24,7 +25,7 @@ export function Matheus(props) {
   useEffect(() => {
     console.log(actions)
     const action = actions.MixamoDefault
-    action.play()
+    action?.play()
     // console.log(nodes)
   }, [])
   

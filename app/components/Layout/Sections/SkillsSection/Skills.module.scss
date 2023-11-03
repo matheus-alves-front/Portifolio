@@ -1,0 +1,132 @@
+@import '/app/styles/theme.scss';
+
+.Container {
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  @include font-family-archivo();
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 20% 80%;
+  }
+
+  @media (max-width: $mobile-small) {
+    grid-template-columns: auto;
+  }
+
+
+  h2 {
+    color: $neutral-color-low-pure;
+    font-size: 5rem;
+    @include font-family-archivo-black();
+    font-weight: 400;
+    margin-bottom: 2rem;
+
+    @media (max-width: $mobile) {
+      color: $neutral-color-high-pure;
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    max-height: 400px;
+    overflow-y: auto;
+    // box-shadow: 0px 10px 24px 0px rgba(255,255,255,0.75) inset;
+
+    padding: 10px;
+    padding-right: 1rem;
+    border-radius: 10px;
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #000000;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: #000000;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+      border-radius: 2px;
+      border: 5px none #ff0000;
+    }
+
+  }
+}
+
+.skill {
+  color: $neutral-color-low-pure;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  cursor: pointer;
+
+  @include font-family-fira-code();
+
+  &:hover {
+    h5 {
+      background-color: $neutral-color-low-pure;
+      color: $neutral-color-high-pure;
+      transform: rotateY(360deg);
+    }
+  }
+
+  h5 {
+    border: 1px solid $neutral-color-low-pure;
+    width: 30%;
+    max-width: 115px;
+    text-align: center;
+    padding: .6rem 0;
+    border-radius: 5px;
+    transform: rotateY(0deg);
+
+    @include transition-slow();
+
+    @media (max-width: $mobile) {
+      background-color: $neutral-color-high-pure;
+    }
+
+    &.clicked {
+      background-color: $neutral-color-low-pure;
+      color: $neutral-color-high-pure;
+    }
+  }
+
+  .skillLevel {
+    display: block;
+    background-color: $primary-color-low-dark;
+    color: $neutral-color-high-pure;
+    border-radius: .5rem;
+    padding: .5rem;
+    max-height: 35px;
+    @include transition-fast();
+
+    > p {
+      overflow: hidden;
+      max-height: 0%;
+
+      @include transition-slow();
+    }
+
+    &.clicked {
+      max-height: 400px;
+      
+      > p {
+        max-height: 100%;
+      }
+    }
+
+  }
+
+}

@@ -1,3 +1,5 @@
+@import '/app/styles/theme.scss';
+
 .CanvaRoot {
   position: fixed;
   width: 100%;
@@ -7,9 +9,24 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 0;
+  z-index: -1;
   // background-color: rgba(0,0,0,0.3);
+  background-color: transparent;
   opacity: 1;
+
+  transition: background-color 1s;
+
+  &.SkillSection {
+    background-color: #fff;
+  }
+
+  &.CareerSection {
+    background-image: url('/backgrounds/background.png');
+    background-color: $neutral-color-low-dark;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   &::after {
     content: '';
@@ -18,6 +35,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.2);
   }
 }

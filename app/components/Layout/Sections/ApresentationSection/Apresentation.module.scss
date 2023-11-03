@@ -1,7 +1,7 @@
 @import '/app/styles/theme.scss';
 
 .Container {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   padding: 2rem;
 
@@ -14,6 +14,8 @@
   color: $neutral-color-high-pure;
 
   .content {
+    margin-bottom: 2rem;
+    
     h1 {
       @include font-family-archivo-black();
       font-size: 10rem;

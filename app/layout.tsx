@@ -1,11 +1,11 @@
 import './styles/globals.scss'
-
+import { Metadata, Viewport } from 'next'
 import { Header } from './components/Layout/Header'
+import { ReactNode } from 'react'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Matheus Alves Front-end',
   description: 'Seja bem Vindo ao meu Website PWA (App)',
-  viewport: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover',
   manifest: "/manifest.json",
   icons: {
     icon: '/icons/nextjs-neon.png',
@@ -18,7 +18,17 @@ export const metadata = {
   }
 }
 
-export default async function RootLayout({ children }) {
+export const viewport: Viewport = {
+  initialScale: 1,
+  minimumScale: 1,
+  width: 'device-width',
+  userScalable: false,
+  viewportFit: 'cover'
+}
+
+export default async function RootLayout({ children }: {
+  children: ReactNode
+}) {
   return (
     <html lang="en">
       <body>
