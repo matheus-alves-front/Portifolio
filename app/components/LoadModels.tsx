@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { 
   useFrame,
@@ -11,6 +11,8 @@ import { motion } from 'framer-motion-3d'
 
 import { Matheus } from './Models/Matheus'
 import { useControls } from 'leva'
+import { MatheusV2 } from './Models/MatheusV2'
+import { AnimationContext } from '../contexts/AnimationContext'
 
 export function LoadModels() {
   const matheusRef = useRef<GroupProps>(null)
@@ -22,68 +24,9 @@ export function LoadModels() {
     gl
   } = useThree()
 
-  useFrame((state, delta) => {
-    // const angle = state.clock.elapsedTime * .05
-    // Camera
-    camera.position.x = CameraControls.x
-    camera.position.y = CameraControls.y
-    camera.position.z = CameraControls.z
-    camera.far = CameraControls.far
-    camera.zoom = CameraControls.zoom
-
-    // Boneco
-    // @ts-ignore
-    matheusRef.current.position.x = matheusPositionRef.x
-    // @ts-ignore
-    matheusRef.current.position.y = matheusPositionRef.y
-    // @ts-ignore
-    matheusRef.current.position.z = matheusPositionRef.z
-
-    // @ts-ignore
-    matheusRef.current.rotation.x = matheusRotationRef.x
-    // @ts-ignore
-    matheusRef.current.rotation.y = matheusRotationRef.y
-    // @ts-ignore
-    matheusRef.current.rotation.z = matheusRotationRef.z
-
-
-    if (isMobileView) {
-      camera.lookAt(
-        0,
-        CameraControls.lookAtY,
-        CameraControls.lookAtZ
-      )
-    } else {
-      camera.lookAt(
-        CameraControls.lookAtX,
-        CameraControls.lookAtY,
-        CameraControls.lookAtZ
-      )
-    }
-  })
-
-  useEffect(() => {
-    getWindowSize()
-
-    window.addEventListener('resize', getWindowSize);
-
-    return () => window.removeEventListener('resize', getWindowSize);
-  }, [])
-
-  function getWindowSize() {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-
-    if (windowWidth < 1024) {
-      setIsMobileView(true)
-    } else {
-      setIsMobileView(false)
-    }
-  }
-
   const matheusPositionRef = useControls('position boneco',{
     y: {
-      value: -1,
+      value: -0.48,
       step: 0.001,
       min: -5,
       max: 5
@@ -184,6 +127,71 @@ export function LoadModels() {
     collapsed: true
   })
 
+
+  useFrame((state, delta) => {
+    HandleAnimations()
+  })
+
+  function HandleAnimations() {
+     // const angle = state.clock.elapsedTime * .05
+    // Camera
+    camera.position.x = CameraControls.x
+    camera.position.y = CameraControls.y
+    camera.position.z = CameraControls.z
+    camera.far = CameraControls.far
+    camera.zoom = CameraControls.zoom
+
+    // Boneco
+    // @ts-ignore
+    matheusRef.current.position.x = matheusPositionRef.x
+    // @ts-ignore
+    matheusRef.current.position.y = matheusPositionRef.y
+    // @ts-ignore
+    matheusRef.current.position.z = matheusPositionRef.z
+
+    // @ts-ignore
+    matheusRef.current.rotation.x = matheusRotationRef.x
+    // @ts-ignore
+    matheusRef.current.rotation.y = matheusRotationRef.y
+    // @ts-ignore
+    matheusRef.current.rotation.z = matheusRotationRef.z
+
+
+    if (isMobileView) {
+      camera.lookAt(
+        0,
+        CameraControls.lookAtY,
+        CameraControls.lookAtZ
+      )
+    } else {
+      camera.lookAt(
+        CameraControls.lookAtX,
+        CameraControls.lookAtY,
+        CameraControls.lookAtZ
+      )
+    }
+  }
+
+  useEffect(() => {
+    getWindowSize()
+
+    window.addEventListener('resize', getWindowSize);
+
+    return () => window.removeEventListener('resize', getWindowSize);
+  }, [])
+
+  function getWindowSize() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    if (windowWidth < 1024) {
+      setIsMobileView(true)
+    } else {
+      setIsMobileView(false)
+    }
+  }
+
+
   return (
     <>
       <OrbitControls makeDefault/>
@@ -198,7 +206,7 @@ export function LoadModels() {
       <motion.ambientLight intensity={1}/>
       <PerspectiveCamera makeDefault />
       <motion.group ref={matheusRef}>
-        <Matheus 
+        <MatheusV2 
           scale={1} 
           position-y={0} 
           position-x={0}

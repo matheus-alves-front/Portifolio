@@ -6,6 +6,7 @@ import { SkillsSection } from "./components/Layout/Sections/SkillsSection";
 import { ScrollImage } from "./components/ScrollImage";
 import { useInView } from "framer-motion";
 import { CareerSection } from "./components/Layout/Sections/CareerSection";
+import { AnimationContextProvider } from "./contexts/AnimationContext";
 
 export default function Home() {
   const skillsSectionRef = useRef(null)
@@ -15,7 +16,7 @@ export default function Home() {
   const isCarrerInView = useInView(careerSectionRef)
 
   return (
-    <>
+    <AnimationContextProvider>
       <main>
         <CanvaRoot 
           isCareerSection={isCarrerInView}
@@ -26,6 +27,6 @@ export default function Home() {
         <CareerSection ref={careerSectionRef} />
       </main>
       <ScrollImage />
-    </>
+    </AnimationContextProvider>
   )
 }

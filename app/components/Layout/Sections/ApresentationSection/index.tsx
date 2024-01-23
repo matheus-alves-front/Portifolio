@@ -3,10 +3,13 @@ import Typical from 'react-typical'
 import styles from './Apresentation.module.scss'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { archivoBlackFont, archivoFont } from '@/app/utils/nextFonts'
+import { useContext } from 'react'
+import { AnimationContext } from '@/app/contexts/AnimationContext'
 
 
 export function ApresentationSection() {
   const { scrollY } = useScroll()
+  const { updateAnimationKey } = useContext(AnimationContext)
 
   let scrollYReverse = useTransform(() => scrollY.get() - (scrollY.get() * 2))
 
@@ -47,7 +50,9 @@ export function ApresentationSection() {
             <span className={styles.skill}>Next.js</span>
             <span className={styles.skill}>Prisma.io</span>
             <span className={styles.skill}>Three.js</span>
-            <span className={`${styles.skill} ${styles.last}`}>More +</span>
+            <span className={`${styles.skill} ${styles.last}`}
+              onClick={() => updateAnimationKey('Porrada')}
+            >More +</span>
           </div>
         </motion.nav>
         <motion.h1 
