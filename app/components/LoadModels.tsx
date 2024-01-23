@@ -13,8 +13,10 @@ import { Matheus } from './Models/Matheus'
 import { useControls } from 'leva'
 import { MatheusV2 } from './Models/MatheusV2'
 import { AnimationContext } from '../contexts/AnimationContext'
+import { ANIMATIONS_TRANSITIONS } from '../utils/AnimationsPositionsRef'
 
 export function LoadModels() {
+  const {animationKey} = useContext(AnimationContext)
   const matheusRef = useRef<GroupProps>(null)
 
   const [isMobileView, setIsMobileView] = useState(false)
@@ -141,13 +143,13 @@ export function LoadModels() {
     camera.far = CameraControls.far
     camera.zoom = CameraControls.zoom
 
-    // Boneco
-    // @ts-ignore
-    matheusRef.current.position.x = matheusPositionRef.x
-    // @ts-ignore
-    matheusRef.current.position.y = matheusPositionRef.y
-    // @ts-ignore
-    matheusRef.current.position.z = matheusPositionRef.z
+    // CONTROLLER
+    // // @ts-ignore
+    // matheusRef.current.position.x = matheusPositionRef.x
+    // // @ts-ignore
+    // matheusRef.current.position.y = matheusPositionRef.y
+    // // @ts-ignore
+    // matheusRef.current.position.z = matheusPositionRef.z
 
     // @ts-ignore
     matheusRef.current.rotation.x = matheusRotationRef.x
@@ -155,7 +157,14 @@ export function LoadModels() {
     matheusRef.current.rotation.y = matheusRotationRef.y
     // @ts-ignore
     matheusRef.current.rotation.z = matheusRotationRef.z
-
+    // ---------------------------------------------------------------
+    // BONECO
+    // @ts-ignore
+    matheusRef.current.position.x = ANIMATIONS_TRANSITIONS[animationKey].x
+    // @ts-ignore
+    matheusRef.current.position.y = ANIMATIONS_TRANSITIONS[animationKey].y
+    // @ts-ignore
+    matheusRef.current.position.z = ANIMATIONS_TRANSITIONS[animationKey].z
 
     if (isMobileView) {
       camera.lookAt(

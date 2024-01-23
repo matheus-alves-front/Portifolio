@@ -1,8 +1,7 @@
-import { ReactNode, createContext, useRef } from "react";
+import { ReactNode, createContext, useRef, useState } from "react";
 import { AnimationAction, AnimationClip, AnimationMixer } from "three";
 
 type AnimationContextType = {
-  animationMixer: AnimationMixer | null,
   animationKey: string,
   updateAnimationKey: (animation: string) => void
 }
@@ -14,19 +13,16 @@ export function AnimationContextProvider({
 }: {
   children: ReactNode
 }) {
-  const playAnimationRef = useRef('sitting')
-  const animationMixer = useRef<AnimationMixer | null>(null)
+  const [animationKey, setAnimationKey] = useState('sitting')
 
   function updateAnimationKey(animation: string) {
-    playAnimationRef.current = animation
-    animationMixer.current?.update(1)
+    setAnimationKey(animation)
   }
 
   return (
     <AnimationContext.Provider value={{
-      animationKey: playAnimationRef.current,
+      animationKey,
       updateAnimationKey,
-      animationMixer: animationMixer.current
     }}>
       {children}
     </AnimationContext.Provider>
