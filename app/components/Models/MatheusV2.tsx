@@ -15,6 +15,8 @@ export function MatheusV2(props: any) {
   const { nodes, materials, animations } = useGLTF("/3dModels/matheussincero.glb");
   const { actions } = useAnimations(animations, group);
 
+  // console.log(actions)
+
   useEffect(() => {
     if (actions[animationKey]) {
       // Parar todas as animações atuais

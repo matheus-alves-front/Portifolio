@@ -46,13 +46,23 @@ export function ApresentationSection() {
             />
           </span>
           <div className={styles.skillSet}>
-            <span className={styles.skill}>React.js</span>
-            <span className={styles.skill}>Next.js</span>
-            <span className={styles.skill}>Prisma.io</span>
-            <span className={styles.skill}>Three.js</span>
-            <span className={`${styles.skill} ${styles.last}`}
+            <span className={styles.skill} 
+              onClick={() => updateAnimationKey('Defeat')}
+            >React.js</span>
+            <span className={styles.skill} 
+              onClick={() => updateAnimationKey('FallingForever')}
+            >Next.js</span>
+            <span className={styles.skill} 
               onClick={() => updateAnimationKey('Porrada')}
-            >More +</span>
+            >Prisma.io</span>
+            <span className={styles.skill} 
+              onClick={() => updateAnimationKey('sitting')}
+            >Three.js</span>
+            <span className={`${styles.skill} ${styles.last}`}
+              onClick={() => updateAnimationKey('sitting')}
+            >
+              More +
+            </span>
           </div>
         </motion.nav>
         <motion.h1 

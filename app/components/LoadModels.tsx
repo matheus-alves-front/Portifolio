@@ -166,6 +166,13 @@ export function LoadModels() {
     // @ts-ignore
     matheusRef.current.position.z = ANIMATIONS_TRANSITIONS[animationKey].z
 
+    // // @ts-ignore
+    // matheusRef.current.rotation.x = matheusRotationRef.x
+    // @ts-ignore
+    matheusRef.current.rotation.y =  ANIMATIONS_TRANSITIONS[animationKey].rotationY
+    // // @ts-ignore
+    // matheusRef.current.rotation.z = matheusRotationRef.z
+
     if (isMobileView) {
       camera.lookAt(
         0,

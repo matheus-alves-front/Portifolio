@@ -15,16 +15,16 @@ export const ANIMATIONS_TRANSITIONS: {
   };
 } = {
   Defeat: {
-    y: 0,
+    y: -.9,
     x: 0,
     z: 0,
     rotationY: 0
   },
   FallingForever: {
-    y: 0,
-    x: 0,
-    z: 0,
-    rotationY: 0
+    y: -.5,
+    x: .2,
+    z: -.5,
+    rotationY: .2
   },
   Porrada: {
     y: -.9,
@@ -33,7 +33,7 @@ export const ANIMATIONS_TRANSITIONS: {
     rotationY: 0
   },
   falling: {
-    y: 0,
+    y: -.9,
     x: 0,
     z: 0,
     rotationY: 0
