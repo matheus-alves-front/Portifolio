@@ -1,24 +1,30 @@
 "use client"
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import styles from '../Skills.module.scss'
+import { AnimationContext } from '@/app/contexts/AnimationContext'
+import { AnimationKey } from '@/app/utils/AnimationsPositionsRef'
 
 export function SkillItem({
   name,
   level,
-  texts
+  texts,
+  animation
 }: {
   name: string,
   level: string,
-  texts: string[]
+  texts: string[],
+  animation: AnimationKey
 }) {
   const [isTexts, setIsTexts] = useState(false)
+  const { updateAnimationKey } = useContext(AnimationContext)
 
   const handleTexts = () => {
-    setIsTexts(true)
+    // setIsTexts(true)
 
-    setTimeout(() => {
-      setIsTexts(false)
-    }, 5000)
+    // setTimeout(() => {
+    //   setIsTexts(false)
+    // }, 5000)
+    updateAnimationKey(animation)
   }
   return (
     <div 

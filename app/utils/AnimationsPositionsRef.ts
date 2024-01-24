@@ -16,7 +16,7 @@ export type AnimationKey =
   | 'WalkInCircle'
   | 'Waving'
 
-export const ANIMATIONS_TRANSITIONS: {
+export const ANIMATIONS_POSITIONS_DESKTOP: {
   [key in AnimationKey]: {
     x: number;
     y: number;
@@ -57,7 +57,7 @@ export const ANIMATIONS_TRANSITIONS: {
   Breakdance: {
     y: -.48,
     x: 0,
-    z: 0,
+    z: -.8,
     rotationY: 0
   },
   Clapping: {

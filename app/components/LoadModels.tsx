@@ -9,7 +9,7 @@ import {
 import { motion } from 'framer-motion-3d'
 import { useControls } from 'leva'
 import { AnimationContext } from '../contexts/AnimationContext'
-import { ANIMATIONS_TRANSITIONS } from '../utils/AnimationsPositionsRef'
+import { ANIMATIONS_POSITIONS_DESKTOP } from '../utils/AnimationsPositionsRef'
 import { MatheusV3 } from './Models/MatheusV3'
 
 export function LoadModels() {
@@ -25,19 +25,19 @@ export function LoadModels() {
 
   const matheusPositionRef = useControls('position boneco',{
     y: {
-      value: ANIMATIONS_TRANSITIONS[animationKey].y,
+      value: ANIMATIONS_POSITIONS_DESKTOP[animationKey].y,
       step: 0.001,
       min: -5,
       max: 5
     },
     x: {
-      value: ANIMATIONS_TRANSITIONS[animationKey].x,
+      value: ANIMATIONS_POSITIONS_DESKTOP[animationKey].x,
       step: 0.001,
       min: -1,
       max: 1
     },
     z: {
-      value: ANIMATIONS_TRANSITIONS[animationKey].z,
+      value: ANIMATIONS_POSITIONS_DESKTOP[animationKey].z,
       step: 0.001,
       min: -5,
       max: 5
@@ -55,7 +55,7 @@ export function LoadModels() {
       max: 5
     },
     y: {
-      value: ANIMATIONS_TRANSITIONS[animationKey].rotationY,
+      value: ANIMATIONS_POSITIONS_DESKTOP[animationKey].rotationY,
       step: 0.01,
       min: -1,
       max: 1
@@ -152,21 +152,21 @@ export function LoadModels() {
     matheusRef.current.rotation.x = matheusRotationRef.x
     // @ts-ignore
     // matheusRef.current.rotation.y = matheusRotationRef.y
+    matheusRef.current.rotation.y =  ANIMATIONS_POSITIONS_DESKTOP[animationKey].rotationY
     // @ts-ignore
     matheusRef.current.rotation.z = matheusRotationRef.z
     // ---------------------------------------------------------------
     // BONECO
     // @ts-ignore
-    matheusRef.current.position.x = ANIMATIONS_TRANSITIONS[animationKey].x
+    matheusRef.current.position.x = ANIMATIONS_POSITIONS_DESKTOP[animationKey].x
     // @ts-ignore
-    matheusRef.current.position.y = ANIMATIONS_TRANSITIONS[animationKey].y
+    matheusRef.current.position.y = ANIMATIONS_POSITIONS_DESKTOP[animationKey].y
     // @ts-ignore
-    matheusRef.current.position.z = ANIMATIONS_TRANSITIONS[animationKey].z
+    matheusRef.current.position.z = ANIMATIONS_POSITIONS_DESKTOP[animationKey].z
 
     // // @ts-ignore
     // matheusRef.current.rotation.x = matheusRotationRef.x
     // @ts-ignore
-    matheusRef.current.rotation.y =  ANIMATIONS_TRANSITIONS[animationKey].rotationY
     // // @ts-ignore
     // matheusRef.current.rotation.z = matheusRotationRef.z
 

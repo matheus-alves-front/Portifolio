@@ -4,8 +4,14 @@ import { motion } from "framer-motion"
 import { SkillItem } from './SkillItem'
 import { forwardRef } from 'react'
 import { archivoBlackFont, firaCodeFont } from '@/app/utils/nextFonts'
+import { AnimationKey } from '@/app/utils/AnimationsPositionsRef'
 
-const Skills = [
+const Skills: {
+  name: string,
+  level: string,
+  texts: string[],
+  animation: AnimationKey
+}[] = [
   {
     name: 'HTML',
     level: '100%',
@@ -13,7 +19,8 @@ const Skills = [
       'HTML 5 is the best for code organization and SEO',
       '<header>, <aside>, <main>, <section>, <summary> are the most used',
       'Build a cool HTML structure helps you when doing CSS and cool layouts like that!'
-    ]
+    ],
+    animation: 'Breakdance'
   },
   {
     name: 'Javascript',
@@ -22,7 +29,8 @@ const Skills = [
       'Javascript is about everything on web, but it`s not only about using libs',
       'Learn the vanilla js will help you when you are using some librarie.',
       'I worked with vanilla js for 3 years and when I started to use the actual libs, I haven`t many trouble because my js basics was updated!'
-    ]
+    ],
+    animation: 'FallingForever'
   },
   {
     name: 'CSS',
@@ -31,7 +39,8 @@ const Skills = [
       'CSS is CSS, CSS 3 is perfect to build cool layouts like that',
       'Do a cool responsive CSS will provides you a lot of good results in your Front-end applications',
       'Flexbox, Gridbox, animations, Canvas etc'
-    ]
+    ],
+    animation: 'FightingIdle'
   },
   {
     name: 'React.js',
@@ -40,7 +49,8 @@ const Skills = [
       'I have good knowledge and practice with React.js',
       'Good understanding the custom hooks, how to create my own hooks',
       'The Lifecicle of a component is a good way to understand the core of react.'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Typescript',
@@ -49,7 +59,8 @@ const Skills = [
       'I only use Typescript in my projects, the IDE helps me a lot when I`m coding',
       'Undestand the changes between types and interface',
       'How to extend types and common types.'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Sass',
@@ -58,7 +69,8 @@ const Skills = [
       'My main CSS stack, Usually I don`t like to use libs for CSS',
       'I love to build everything from 0 with Sass.',
       'Create themes variables and mixins are a good way to build a beautiful portifolio like that :D'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Next.js',
@@ -67,7 +79,8 @@ const Skills = [
       'My main stack using React.js, I love the Next.js features',
       'Routing, api Routing, data fetching, using Next 12 or 13',
       'This portifolio is using Next.js +13'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Three.js',
@@ -76,7 +89,8 @@ const Skills = [
       'I did the Three.js Journey Course and I love it',
       'I didn`t have many time to study and practice a lot',
       'But still one of my favorites stacks ever! 3D in a website is INSANE!'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Node.js',
@@ -85,7 +99,8 @@ const Skills = [
       'Node.js is about everything',
       'If you are a web developer you MUST learn about Node.js',
       'Everything is about node.js, you can do Backend and Frontend using only Node.js'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Nest.js',
@@ -95,7 +110,8 @@ const Skills = [
       'When I was coding on node.js, I hate because is very ugly',
       'Other backend languages are so beautiful coding then Node.js',
       'But Nest.js IS PERFECT and SO EASY!'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Prisma',
@@ -106,8 +122,8 @@ const Skills = [
       'But prisma makes things easy',
       'Do relations and Call it using Prisma/client is the best way',
       'The documentation is VERY GOOD!'
-
-    ]
+    ],
+    animation: 'HappyIdle'
   },
   {
     name: 'Vue.js',
@@ -116,7 +132,8 @@ const Skills = [
       'I read all the documentation of Vue.js, is a good one',
       'Actually is very require by the companies, so it`s good to understand their solutions',
       'I enjoyed a lot learning Vue.js, because having other stack in my knowledge is better for future opportunities'
-    ]
+    ],
+    animation: 'HappyIdle'
   },
 ]
 
@@ -142,6 +159,7 @@ export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(p
             level={item.level}
             name={item.name}
             texts={item.texts} 
+            animation={item.animation}
           />
          ))}
         </div>
