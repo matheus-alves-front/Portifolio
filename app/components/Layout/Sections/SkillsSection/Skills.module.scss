@@ -33,11 +33,15 @@
 
   .skills {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 1rem;
 
     max-height: 400px;
-    overflow-y: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     // box-shadow: 0px 10px 24px 0px rgba(255,255,255,0.75) inset;
 
     padding: 10px;

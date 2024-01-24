@@ -6,14 +6,11 @@ import {
   useThree,
   GroupProps,
 } from '@react-three/fiber'
-
 import { motion } from 'framer-motion-3d'
-
-import { Matheus } from './Models/Matheus'
 import { useControls } from 'leva'
-import { MatheusV2 } from './Models/MatheusV2'
 import { AnimationContext } from '../contexts/AnimationContext'
 import { ANIMATIONS_TRANSITIONS } from '../utils/AnimationsPositionsRef'
+import { MatheusV3 } from './Models/MatheusV3'
 
 export function LoadModels() {
   const {animationKey} = useContext(AnimationContext)
@@ -28,19 +25,19 @@ export function LoadModels() {
 
   const matheusPositionRef = useControls('position boneco',{
     y: {
-      value: -0.48,
+      value: ANIMATIONS_TRANSITIONS[animationKey].y,
       step: 0.001,
       min: -5,
       max: 5
     },
     x: {
-      value: 0,
+      value: ANIMATIONS_TRANSITIONS[animationKey].x,
       step: 0.001,
       min: -1,
       max: 1
     },
     z: {
-      value: 0,
+      value: ANIMATIONS_TRANSITIONS[animationKey].z,
       step: 0.001,
       min: -5,
       max: 5
@@ -58,7 +55,7 @@ export function LoadModels() {
       max: 5
     },
     y: {
-      value: 0,
+      value: ANIMATIONS_TRANSITIONS[animationKey].rotationY,
       step: 0.01,
       min: -1,
       max: 1
@@ -154,7 +151,7 @@ export function LoadModels() {
     // @ts-ignore
     matheusRef.current.rotation.x = matheusRotationRef.x
     // @ts-ignore
-    matheusRef.current.rotation.y = matheusRotationRef.y
+    // matheusRef.current.rotation.y = matheusRotationRef.y
     // @ts-ignore
     matheusRef.current.rotation.z = matheusRotationRef.z
     // ---------------------------------------------------------------
@@ -222,7 +219,7 @@ export function LoadModels() {
       <motion.ambientLight intensity={1}/>
       <PerspectiveCamera makeDefault />
       <motion.group ref={matheusRef}>
-        <MatheusV2 
+        <MatheusV3 
           scale={1} 
           position-y={0} 
           position-x={0}

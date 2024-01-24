@@ -26,7 +26,7 @@ export function ApresentationSection() {
           >
             <Typical 
               loop={Infinity}
-              wrapper="b"
+              wrapper="a"
               steps={[
                 'Front-end',
                 2000,
@@ -47,19 +47,19 @@ export function ApresentationSection() {
           </span>
           <div className={styles.skillSet}>
             <span className={styles.skill} 
-              onClick={() => updateAnimationKey('Defeat')}
+              onClick={() => updateAnimationKey('FallingForever')}
             >React.js</span>
             <span className={styles.skill} 
-              onClick={() => updateAnimationKey('FallingForever')}
+              onClick={() => updateAnimationKey('FightingIdle')}
             >Next.js</span>
             <span className={styles.skill} 
-              onClick={() => updateAnimationKey('Porrada')}
+              onClick={() => updateAnimationKey('PunchingBag')}
             >Prisma.io</span>
             <span className={styles.skill} 
-              onClick={() => updateAnimationKey('sitting')}
+              onClick={() => updateAnimationKey('Counting')}
             >Three.js</span>
             <span className={`${styles.skill} ${styles.last}`}
-              onClick={() => updateAnimationKey('sitting')}
+              onClick={() => updateAnimationKey('Typing')}
             >
               More +
             </span>
