@@ -1,0 +1,63 @@
+@import '/app/styles/theme.scss';
+
+.Dialog {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #040204;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .ReadySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    h3 {
+      color: $neutral-color-high-medium;
+      @include font-family-fira-code();
+      margin: 0;
+    }
+
+    p {
+      color: $primary-color-low-dark;
+      @include font-family-fira-code();
+      font-size: .8rem;
+      max-width: 300px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .playableIcon {
+      font-size: 1rem;
+      color: $neutral-color-high-medium;
+    }
+    
+    button {
+      width: 150px;
+      height: 50px;
+      font-size: 1.5rem;
+      background-color: transparent;
+      border: 1px solid $primary-color-low-dark;
+      color: $primary-color-low-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      @include transition-slow();
+
+      &:hover {
+        gap: 25px;
+      }
+    }
+  }
+}

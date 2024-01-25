@@ -127,6 +127,16 @@
       padding: .5rem;
       height: 55px;
       @include transition-fast();
+      position: relative;
+
+      .playableIcon {
+        position: absolute;
+        left: 16px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 1.1rem;
+      }
     }
 
     > p {

@@ -43,7 +43,14 @@
         .skill {
           padding: .5rem;
           border: 1px solid $neutral-color-high-pure;
-          cursor: help;
+          background-color: transparent;
+          color: $neutral-color-high-pure;
+          font-size: .9rem;
+          cursor: pointer;
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          justify-content: center;
           @include transition-slow();
 
           &:hover {

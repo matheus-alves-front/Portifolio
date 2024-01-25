@@ -3,6 +3,7 @@ import { useContext, useState } from 'react'
 import styles from '../Skills.module.scss'
 import { AnimationContext } from '@/app/contexts/AnimationContext'
 import { AnimationKey } from '@/app/utils/AnimationsPositionsRef'
+import { TfiGame } from "react-icons/tfi";
 
 export function SkillItem({
   name,
@@ -43,6 +44,7 @@ export function SkillItem({
             width: level
           }}
         >
+          <TfiGame className={styles.playableIcon} />
         </div>
         {texts.map((text, index) => (
           <p key={index} className={isTexts ? styles.clicked : ''}>

@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { archivoBlackFont, archivoFont } from '@/app/utils/nextFonts'
 import { useContext } from 'react'
 import { AnimationContext } from '@/app/contexts/AnimationContext'
-
+import { TfiGame } from "react-icons/tfi";
 
 export function ApresentationSection() {
   const { scrollY } = useScroll()
@@ -46,23 +46,31 @@ export function ApresentationSection() {
             />
           </span>
           <div className={styles.skillSet}>
-            <span className={styles.skill} 
+            <button className={styles.skill} 
               onClick={() => updateAnimationKey('FallingForever')}
-            >React.js</span>
-            <span className={styles.skill} 
+            >
+               <TfiGame /> React.js
+            </button>
+            <button className={styles.skill} 
               onClick={() => updateAnimationKey('FightingIdle')}
-            >Next.js</span>
-            <span className={styles.skill} 
+            >
+              <TfiGame /> Next.js 
+            </button>
+            <button className={styles.skill} 
               onClick={() => updateAnimationKey('PunchingBag')}
-            >Prisma.io</span>
-            <span className={styles.skill} 
+            >
+              <TfiGame /> Prisma.io 
+            </button>
+            <button className={styles.skill} 
               onClick={() => updateAnimationKey('Counting')}
-            >Three.js</span>
-            <span className={`${styles.skill} ${styles.last}`}
+            >
+              <TfiGame /> Three.js 
+            </button>
+            <button className={`${styles.skill} ${styles.last}`}
               onClick={() => updateAnimationKey('Typing')}
             >
-              More +
-            </span>
+              <TfiGame /> More + 
+            </button>
           </div>
         </motion.nav>
         <motion.h1 

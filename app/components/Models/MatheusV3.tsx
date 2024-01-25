@@ -8,28 +8,25 @@ import { AnimationContext } from "@/app/contexts/AnimationContext";
 
 export function MatheusV3(props: any) {
   const group = useRef();
-  const { animationKey, updateAnimationKey } = useContext(AnimationContext)
+  const { animationKey, updateLoader } = useContext(AnimationContext)
 
   // @ts-ignore
   const { nodes, materials, animations } = useGLTF("/3dModels/MatheusBoneco.glb");
   const { actions } = useAnimations(animations, group);
 
-  useLayoutEffect(() => {
-    if (typeof window !== "undefined") {
-      const sw = window?.navigator?.serviceWorker
-
-      if (sw) {
-        sw.register("/sw.js", { scope: "/" }).then((registration) => {
-          console.log("Service Worker registration successful with scope: ", registration.scope);
-        }).catch((err) => {
-          console.log("Service Worker registration failed: ", err);
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
         });
-      }
     }
-  })
+  }, []);
 
   useEffect(() => {
-    console.log(actions)
     if (actions[animationKey]) {
       // Parar todas as animações atuais
       Object.values(actions).forEach((action) => {
@@ -52,6 +49,7 @@ export function MatheusV3(props: any) {
     //     clearTimeout(0)
     //   }, 5000)
     // }
+    updateLoader(false)
   }, [actions, animationKey]);
 
   return (
