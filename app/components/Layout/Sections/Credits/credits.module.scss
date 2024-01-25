@@ -1,0 +1,27 @@
+@import '/app/styles/theme.scss';
+
+.Footer {
+  height: 40vh;
+  width: 100%;
+  padding: 10rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: $neutral-color-high-pure;
+  @include font-family-fira-code();
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $primary-color-low-pure;
+    @include transition-fast();
+
+    &:hover {
+      color: $primary-color-low-light;
+    }
+  }
+}

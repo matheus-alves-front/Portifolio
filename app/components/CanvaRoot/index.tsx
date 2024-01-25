@@ -6,17 +6,20 @@ import styles from './CanvaRoot.module.scss'
 
 export function CanvaRoot({
   isSkillSection,
-  isCareerSection
+  isCareerSection,
+  isCreditsSection
 }: {
-  isSkillSection: boolean
-  isCareerSection: boolean
+  isSkillSection: boolean,
+  isCareerSection: boolean,
+  isCreditsSection: boolean
 }) {
   return (
     <section
       className={
         `${styles.CanvaRoot} 
-        ${isSkillSection ? styles.SkillSection : ''}
-        ${isCareerSection ? styles.CareerSection : ''}
+          ${isSkillSection ? styles.SkillSection : null}
+          ${isCareerSection ? styles.CareerSection : null}
+          ${isCreditsSection ? styles.CareerSection : null}
         `
       }
     >
