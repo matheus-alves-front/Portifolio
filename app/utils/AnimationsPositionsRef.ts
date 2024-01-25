@@ -25,31 +25,31 @@ export const ANIMATIONS_POSITIONS_DESKTOP: {
   };
 } = {
   Defeat: {
-    y: -.9,
+    y: -1,
     x: 0,
     z: 0,
     rotationY: 0
   },
   FallingForever: {
-    y: -.6,
+    y: -.5,
     x: 0,
     z: -.6,
-    rotationY: .44
+    rotationY: .3
   },
   FightingIdle: {
-    y: -.9,
+    y: -1,
     x: 0,
     z: -0.2,
     rotationY: 0.7
   },
   Trippin: {
-    y: -.9,
+    y: -1,
     x: 0,
     z: 0,
     rotationY: 0
   },
   Typing: {
-    y: -.5,
+    y: -.6,
     x: 0,
     z: 0,
     rotationY: .25
@@ -85,7 +85,7 @@ export const ANIMATIONS_POSITIONS_DESKTOP: {
     rotationY: 0
   },
   PunchingBag: {
-    y: -.8,
+    y: -.9,
     x: 0,
     z: -.2,
     rotationY: 0.25

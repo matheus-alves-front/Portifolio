@@ -22,6 +22,12 @@
     }
   }
 
+  @media (max-width: $mobile-ultra-small) {
+    p {
+      font-size: .6rem
+    }
+  }
+
   a {
     color: $primary-color-low-pure;
     @include transition-fast();

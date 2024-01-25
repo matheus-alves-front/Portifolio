@@ -7,13 +7,33 @@ import { color, motion } from "framer-motion"
 import { FaArrowRight } from "react-icons/fa";
 import { TfiGame } from "react-icons/tfi";
 
+const variants = {
+  active: {
+      opacity: 1
+  },
+  inactive: {
+    opacity: 0,
+    zIndex: 0
+  }
+}
+
 export function Loader() {
   const {isLoader} = useContext(AnimationContext)
   const [isEnter, setIsEnter] = useState(false)
+  
   return (
     <>
-      {!isEnter 
-      ? <motion.section className={styles.Dialog}>
+      {/* {!isEnter ?  */}
+      <motion.section 
+        transition={{
+          type: 'spring',
+          damping: 10,
+          stiffness: 100
+        }} 
+        variants={variants} 
+        animate={!isEnter ? 'active' : 'inactive'} 
+        className={styles.Dialog}
+      >
           {isLoader ?
             <Image
               alt='Loading' 
@@ -34,8 +54,7 @@ export function Loader() {
             </div>
           }
         </motion.section>
-      : null
-      }
+      {/* : null } */}
     </>
   )
 }

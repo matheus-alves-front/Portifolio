@@ -97,12 +97,9 @@
     padding: .6rem 0;
     border-radius: 5px;
     transform: rotateY(0deg);
+    background-color: $neutral-color-high-dark;
 
     @include transition-slow();
-
-    @media (max-width: $mobile) {
-      background-color: $neutral-color-high-pure;
-    }
 
     @media (max-width: $mobile-small) {
       min-width: 90px;

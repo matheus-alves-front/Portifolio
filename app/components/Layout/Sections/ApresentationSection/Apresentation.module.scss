@@ -34,6 +34,14 @@
       .writingLabel {
         font-size: 2rem;
         font-weight: bold;
+        // animation: writingLabelAnimation 2s ease-in-out infinite;
+        // animation-direction: alternate;
+        // animation-delay: 1s
+
+        > span {
+          padding-right: 2px;
+          padding-top: 2px;
+        }
       }
 
       .skillSet {
@@ -142,5 +150,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes writingLabelAnimation {
+  from {
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 0, 0, 1080deg);
   }
 }

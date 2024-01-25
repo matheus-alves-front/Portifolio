@@ -110,7 +110,7 @@ export function LoadModels() {
       max: 5
     },
     far: {
-      value: 1,
+      value: 100,
       step: 0.01,
       min: 200,
       max: 1000
@@ -221,7 +221,7 @@ export function LoadModels() {
       <motion.group ref={matheusRef}>
         <MatheusV3 
           scale={1} 
-          position-y={0} 
+          position-y={.1} 
           position-x={0}
         />
       </motion.group>
