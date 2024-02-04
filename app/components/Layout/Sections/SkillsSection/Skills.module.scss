@@ -31,11 +31,23 @@
     }
   }
 
+
+  .Content {
+    position: relative;
+
+    .scrollTyping {
+      color: #ffffff;
+      position: absolute;
+      bottom: -22px;
+    }
+  }
+
   .skills {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 1rem;
+    cursor: grab;
 
     max-height: 400px;
     overflow-x: auto;
@@ -56,16 +68,21 @@
 
     &::-webkit-scrollbar {
       width: 4px;
+      height: 25px;
+      cursor: grab;
     }
   
     &::-webkit-scrollbar-track {
       background: #000000;
+      cursor: grab;
+      border-radius: 5px;
     }
   
     &::-webkit-scrollbar-thumb {
       background-color: #ffffff;
       border-radius: 2px;
       border: 5px none #ff0000;
+      cursor: grab;
     }
 
   }

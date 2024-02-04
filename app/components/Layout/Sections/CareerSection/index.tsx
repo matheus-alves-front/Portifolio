@@ -155,8 +155,8 @@ const CAREER_RESUME = [
 ]
 
 export const CareerSection = forwardRef<HTMLDivElement>(function CareerSection(props, ref) {
-  const [actualYear, setActualYear] = useState(2018)
-  const [yearIndex, setYearIndex] = useState(0)
+  const [actualYear, setActualYear] = useState(2023)
+  const [yearIndex, setYearIndex] = useState(5)
 
   return (
     <section id="experiences" className={`${styles.Container}`}>

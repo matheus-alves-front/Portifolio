@@ -22,7 +22,6 @@ export default function Home() {
 
   return (
     <AnimationContextProvider>
-      <Loader />
       <main>
         <CanvaRoot 
           isCreditsSection={isCreditsInView}

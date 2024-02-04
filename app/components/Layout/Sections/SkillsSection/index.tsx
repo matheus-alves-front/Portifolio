@@ -5,6 +5,7 @@ import { SkillItem } from './SkillItem'
 import { forwardRef } from 'react'
 import { archivoBlackFont, firaCodeFont } from '@/app/utils/nextFonts'
 import { AnimationKey } from '@/app/utils/AnimationsPositionsRef'
+import { Typewriter } from 'react-simple-typewriter'
 
 const Skills: {
   name: string,
@@ -148,11 +149,15 @@ export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(p
         whileInView={{
           opacity: 1
         }}
-        transition={{ delay: .4 }}
-        className={firaCodeFont.className}
+        className={styles.Content}
       >
         <h2 className={archivoBlackFont.className}>SKILLS</h2>
-        <div ref={ref} className={styles.skills}>
+        <motion.div 
+          ref={ref} 
+          animate={['visible']}
+          draggable
+          className={`${styles.skills} ${firaCodeFont.className}`}
+        >
          {Skills.map((item, index) => (
           <SkillItem 
             key={index}
@@ -162,7 +167,16 @@ export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(p
             animation={item.animation}
           />
          ))}
-        </div>
+        </motion.div>
+        <span className={`${styles.scrollTyping} ${firaCodeFont.className}`}>
+          <Typewriter 
+            words={['Slide Here <- - - - - - - ->']}
+            typeSpeed={50}
+            deleteSpeed={50}
+            loop={true}
+            delaySpeed={1000} 
+          />
+        </span>
       </motion.div>
     </section>
   )
