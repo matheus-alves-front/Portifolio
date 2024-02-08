@@ -1,10 +1,10 @@
 .img {
   width: 100px;
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 2rem;
+  right: 2rem;
   animation: infinite spinner 11s linear;
-
+  z-index: 1;
 }
 
 @keyframes spinner {
