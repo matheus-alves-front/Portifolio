@@ -147,7 +147,38 @@ const CAREER_RESUME = [
       'typescript',
       'mongodb',
       'prisma',
-      'threejs'
+      'threejs',
+      'nestjs'
+    ],
+    texts: [
+      ''
+    ]
+  },
+  {
+    year: 2024,
+    stacks: [
+      'html',
+      'css',
+      'javascript',
+      'jquery',
+      'bootstrap',
+      'github',
+      'bitbucket',
+      'gitlab',
+      'magento',
+      'phtml',
+      'mysql',
+      'git',
+      'vitejs',
+      'react',
+      'sass',
+      'less',
+      'nextjs',
+      'typescript',
+      'mongodb',
+      'prisma',
+      'threejs',
+      'nestjs'
     ],
     texts: [
       ''
@@ -156,8 +187,8 @@ const CAREER_RESUME = [
 ]
 
 export const CareerSection = forwardRef<HTMLDivElement>(function CareerSection(props, ref) {
-  const [actualYear, setActualYear] = useState(2023)
-  const [yearIndex, setYearIndex] = useState(5)
+  const [actualYear, setActualYear] = useState(2024)
+  const [yearIndex, setYearIndex] = useState(6)
 
   return (
     <section id="experiences" className={`${styles.Container}`}>
