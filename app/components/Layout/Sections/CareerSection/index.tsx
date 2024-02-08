@@ -178,7 +178,9 @@ const CAREER_RESUME = [
       'mongodb',
       'prisma',
       'threejs',
-      'nestjs'
+      'nestjs',
+      'tailwind',
+      'radix'
     ],
     texts: [
       ''
