@@ -2,7 +2,6 @@ import Image from "next/image";
 import { forwardRef } from "react";
 
 import styles from './styles.module.scss';
-import { Stint_Ultra_Condensed } from "next/font/google";
 import Link from "next/link";
 
 const COMPANIES = [

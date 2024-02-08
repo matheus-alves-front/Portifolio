@@ -110,7 +110,7 @@ export function LoadModels() {
       max: 5
     },
     far: {
-      value: 100,
+      value: 1000,
       step: 0.01,
       min: 10,
       max: 1000
@@ -123,7 +123,7 @@ export function LoadModels() {
     }
   }, 
   {
-    collapsed: true
+    collapsed: true,
   })
 
 
@@ -138,8 +138,10 @@ export function LoadModels() {
     camera.position.y = CameraControls.y
     camera.position.z = CameraControls.z
     camera.far = CameraControls.far
+    camera.near = 0.1
     camera.zoom = CameraControls.zoom
-
+    
+    camera.updateProjectionMatrix();
     // CONTROLLER
     // // @ts-ignore
     // matheusRef.current.position.x = matheusPositionRef.x
