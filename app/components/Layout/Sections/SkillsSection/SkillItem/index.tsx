@@ -34,8 +34,6 @@ export function SkillItem({
     >
       <h5 className={isTexts ? styles.clicked : ''}>
         {name}
-        <br />
-        <small>Level {level.replace('%', '')}</small>
       </h5>
       <div className={`${styles.skillLevelContent} ${isTexts ? styles.clicked : ''}`}>
         <div 

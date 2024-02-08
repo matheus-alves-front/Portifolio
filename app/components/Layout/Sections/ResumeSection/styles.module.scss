@@ -1,0 +1,175 @@
+@import '/app/styles/theme.scss';
+
+.ResumeSection {
+  min-height: 100vh;
+  width: 100%;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  @media (max-width: $mobile-small) {
+    padding: 6rem 1rem;
+    height: 100dvh;
+  }
+
+  > figure {
+    align-items: center;
+    justify-self: center;
+
+    img {
+      border-radius: 20px;
+      border: 2px solid $neutral-color-high-light;
+    }
+
+    figcaption {
+      text-align: center;
+
+      a {
+        @include font-family-fira-code();
+        @include transition-slow();
+        color: $neutral-color-high-light;
+
+        &:hover {
+          color: $primary-color-low-dark;
+        }
+      }
+    }
+  }
+
+  .resumeContent {
+    @include font-family-fira-code();
+
+    @media (min-width: $mobile) {
+      width: 540px;
+    }
+
+    h3 {
+      color: $neutral-color-high-light; 
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+
+      @media (max-width: $mobile-small) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .ul {
+      color: $neutral-color-high-light;
+      padding-left: 1rem;
+      font-size: 1.2rem;
+      position: relative;
+      list-style: inside;
+
+      &::after {
+        content: 'Older';
+        position: absolute;
+        font-size: 1rem;
+        bottom: -60px;
+        left: -0px;
+      }
+
+      &::before {
+        content: 'Recent';
+        font-size: 1rem;
+        position: absolute;
+        top: -10px;
+        left: -0px;
+      }
+
+      .li {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        position: relative;
+
+        @media (max-width: $mobile) {
+          &::after {
+            animation: pulseColor ease;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: .5s;
+          }
+          &::before {
+            animation: pulseColor ease;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
+        }
+
+        &::before {
+          @include transition-slow();
+          content: '';
+          width: .5rem;
+          height: .5rem;
+          border-radius: 100%;
+          background-color: $neutral-color-high-light;
+          position: absolute;
+          left: -0px;
+          bottom: 0px;
+        }
+
+        &::after {
+          @include transition-slow();
+          content: '';
+          width: .7rem;
+          height: .7rem;
+          border-radius: 100%;
+          background-color: $neutral-color-high-light;
+          position: absolute;
+          left: -2px;
+          bottom: -25px;
+        }
+
+        &:hover {
+          color: $primary-color-low-dark;
+
+          &::after {
+            animation: pulseColor ease;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: .5s;
+          }
+          &::before {
+            animation: pulseColor ease;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
+
+          a {
+            font-size: 1.1rem;
+          }
+        }
+
+        a {
+          @include transition-slow();
+          color: $neutral-color-high-light;
+
+          @media (max-width: $mobile-small) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulseColor {
+  from {
+    background-color: $neutral-color-high-light;
+  }
+  to {
+    background-color: $primary-color-low-dark;
+  }
+}

@@ -60,7 +60,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-content: center;
-    gap: 20px;
+    gap: 0px;
 
     @media (max-width: $mobile-small) {
       grid-template-columns: repeat(4, 1fr);

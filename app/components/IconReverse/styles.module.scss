@@ -1,0 +1,55 @@
+@import '/app/styles/theme.scss';
+
+.IconReverseContainer {
+  &:hover {
+    .IconReverse {
+      transform: rotateY(180deg);
+  
+      figcaption {
+        transform: rotateY(180deg);
+        opacity: 1;
+      }
+    }
+  }
+
+  .IconReverse {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  
+    @include transition-slow();
+  
+  
+    .neon {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      transform: rotateY(180deg);
+    }
+  
+    img {
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
+  
+    .normal {
+      z-index: 2;
+      background-color: black;
+    }
+  
+    figcaption {
+      @include transition-slow();
+      @include font-family-fira-code();
+      font-size: .8rem;
+      color: $neutral-color-high-light;
+      position: absolute;
+      bottom: 0px;
+      opacity: 0;
+    }
+  }
+}

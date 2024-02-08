@@ -1,18 +1,38 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
 import { LoadModels } from '../LoadModels'
-import { StrictMode } from 'react'
+import { StrictMode, useContext, useEffect } from 'react'
 import styles from './CanvaRoot.module.scss'
+import { AnimationContext } from '@/app/contexts/AnimationContext'
 
 export function CanvaRoot({
   isSkillSection,
   isCareerSection,
-  isCreditsSection
+  isCreditsSection,
+  isResumeSection
 }: {
   isSkillSection: boolean,
   isCareerSection: boolean,
-  isCreditsSection: boolean
+  isCreditsSection: boolean,
+  isResumeSection: boolean
 }) {
+  const {updateAnimationKey} = useContext(AnimationContext)
+
+  useEffect(() => {
+    if (isSkillSection) {
+      updateAnimationKey('FallingForever')
+    }
+    if (isCareerSection && !isSkillSection) {
+      updateAnimationKey('Counting')
+    }
+  }, [
+    isSkillSection,
+    isCareerSection,
+    isCreditsSection,
+    isResumeSection
+  ])
+
+
   return (
     <section
       className={
@@ -20,6 +40,7 @@ export function CanvaRoot({
           ${isSkillSection ? styles.SkillSection : null}
           ${isCareerSection ? styles.CareerSection : null}
           ${isCreditsSection ? styles.CareerSection : null}
+          ${isResumeSection ? styles.CareerSection : null}
         `
       }
     >

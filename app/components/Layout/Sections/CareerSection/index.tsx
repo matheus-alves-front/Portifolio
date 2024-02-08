@@ -2,7 +2,7 @@
 import { forwardRef, useState } from "react";
 import styles from './Career.module.scss'
 import { archivoBlackFont, archivoFont } from "@/app/utils/nextFonts";
-import Image from "next/image";
+import { IconReverse } from "@/app/components/IconReverse";
 
 const CAREER_RESUME = [
   {
@@ -147,6 +147,7 @@ const CAREER_RESUME = [
       'typescript',
       'mongodb',
       'prisma',
+      'threejs'
     ],
     texts: [
       ''
@@ -177,7 +178,7 @@ export const CareerSection = forwardRef<HTMLDivElement>(function CareerSection(p
       </nav>
       <div ref={ref} className={styles.stacks}>
         {CAREER_RESUME[yearIndex].stacks.map(item => (
-          <Image width={50} height={50} key={item} src={`/assets/icons/${item}.png`} alt={item} />
+          <IconReverse key={item} name={item} alt={item} />
         ))}
       </div>
     </section>

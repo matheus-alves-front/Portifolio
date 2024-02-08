@@ -112,7 +112,7 @@ export function LoadModels() {
     far: {
       value: 100,
       step: 0.01,
-      min: 200,
+      min: 10,
       max: 1000
     },
     zoom: {

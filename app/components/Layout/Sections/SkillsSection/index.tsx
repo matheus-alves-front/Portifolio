@@ -2,7 +2,7 @@
 import styles from './Skills.module.scss'
 import { motion } from "framer-motion"
 import { SkillItem } from './SkillItem'
-import { forwardRef } from 'react'
+import { forwardRef, useEffect, useRef } from 'react'
 import { archivoBlackFont, firaCodeFont } from '@/app/utils/nextFonts'
 import { AnimationKey } from '@/app/utils/AnimationsPositionsRef'
 import { Typewriter } from 'react-simple-typewriter'
@@ -139,6 +139,62 @@ const Skills: {
 ]
 
 export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(props, ref) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!container) return;
+
+      const isAtStart = container.scrollLeft === 0;
+      const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth;
+
+      let isThrottled = false;
+
+      if (isThrottled) return;
+      isThrottled = true;
+      
+      setTimeout(() => {
+        isThrottled = false;
+      }, 400); // Tempo de "cooldown" para o próximo scroll
+
+      if (event.deltaY > 0 && !isAtEnd) {
+        // Scroll para baixo - move para o próximo slide
+        moveToNextSlide(container);
+      } else if (event.deltaY < 0 && !isAtStart) {
+        // Scroll para cima - move para o slide anterior
+        moveToPreviousSlide(container);
+      }
+
+      event.preventDefault();
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
+  // Calcula e move para o próximo slide
+  const moveToNextSlide = (container: HTMLDivElement) => {
+    const slideWidth = container.offsetWidth;
+    const newScrollPosition = container.scrollLeft + slideWidth;
+    container.scrollTo({ left: newScrollPosition, behavior: 'smooth' });
+  };
+
+  // Calcula e move para o slide anterior
+  const moveToPreviousSlide = (container: HTMLDivElement) => {
+    const slideWidth = container.offsetWidth;
+    const newScrollPosition = container.scrollLeft - slideWidth;
+    container.scrollTo({ left: newScrollPosition, behavior: 'smooth' });
+  };
+
+  
   return (
     <section id='skills' className={styles.Container}>
       <div></div>
@@ -149,13 +205,13 @@ export const SkillsSection = forwardRef<HTMLDivElement>(function SkillsSection(p
         whileInView={{
           opacity: 1
         }}
+        ref={ref} 
         className={styles.Content}
       >
         <h2 className={archivoBlackFont.className}>SKILLS</h2>
         <motion.div 
-          ref={ref} 
           animate={['visible']}
-          draggable
+          ref={scrollRef}
           className={`${styles.skills} ${firaCodeFont.className}`}
         >
          {Skills.map((item, index) => (
