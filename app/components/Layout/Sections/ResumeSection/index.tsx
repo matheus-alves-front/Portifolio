@@ -33,12 +33,12 @@ const COMPANIES = [
   }, 
   {
     name: 'WEBJUMP',
-    title: 'Front-end Junior',
+    title: 'Front-end Jr',
     url: 'https://webjump.ai/en/'
   }, 
   {
     name: 'Perfect Pay',
-  title: 'Front-end Junior',
+  title: 'Front-end Jr',
     url: 'https://perfectpay.com.br/'
   }
 
