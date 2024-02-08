@@ -3,6 +3,10 @@ const withPWA = require('next-pwa')({
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  experimental: {
+    webpackBuildWorker: true
+  }
+}
 
 module.exports = withPWA(nextConfig)
