@@ -9,27 +9,35 @@ export function CanvaRoot({
   isSkillSection,
   isCareerSection,
   isCreditsSection,
-  isResumeSection
+  isResumeSection,
+  isRecommensationsInView
 }: {
   isSkillSection: boolean,
   isCareerSection: boolean,
   isCreditsSection: boolean,
-  isResumeSection: boolean
+  isResumeSection: boolean,
+  isRecommensationsInView: boolean
 }) {
   const {updateAnimationKey} = useContext(AnimationContext)
 
   useEffect(() => {
     if (isSkillSection) {
       updateAnimationKey('FallingForever')
+      return
     }
-    if (isCareerSection && !isSkillSection) {
+    if (isCareerSection && !isSkillSection && !isResumeSection) {
       updateAnimationKey('Counting')
+      return
+    }
+    if (isRecommensationsInView && !isResumeSection) {
+      updateAnimationKey('FightingIdle')
     }
   }, [
     isSkillSection,
     isCareerSection,
     isCreditsSection,
-    isResumeSection
+    isResumeSection,
+    isRecommensationsInView
   ])
 
 
@@ -41,6 +49,7 @@ export function CanvaRoot({
           ${isCareerSection ? styles.CareerSection : null}
           ${isCreditsSection ? styles.CareerSection : null}
           ${isResumeSection ? styles.CareerSection : null}
+          ${isRecommensationsInView ? styles.CareerSection : null}
         `
       }
     >

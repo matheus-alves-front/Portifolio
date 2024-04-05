@@ -1,0 +1,130 @@
+@import '/app/styles/theme.scss';
+
+.Section {
+  width: 100%;
+  padding: 6rem 2rem;
+
+  color: $neutral-color-high-pure;
+  
+  @media (max-width: $mobile-ultra-small) {
+    padding: 6rem 1rem;
+  }
+
+  h2 {
+    color: $neutral-color-high-light;
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 5rem;
+
+
+    @media (max-width: $mobile) {
+      font-size: 3.5rem;
+    }
+
+    @media (max-width: $mobile-small) {
+      font-size: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    @media (max-width: $mobile-super-small) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .recommendationGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .recommendation {
+    cursor: pointer;
+    background-color:  rgba(255,255,255,0.8);
+    color: $neutral-color-low-pure;
+    width: 500px;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    @include transition-fast();
+    box-shadow: 0px 0px 5px 2px $neutral-color-low-pure;
+
+    @media (max-width: $mobile-small) {
+      width: 100%;
+      background-color:  rgba(255,255,255,0.9);
+    }
+
+    @media (min-width: $mobile-small) {
+      margin-right: 10rem;
+      transform-style: preserve-3d;
+      transform: skewX(15deg) !important;
+      scale: .9;
+
+      &:hover {
+        transform: skewX(0deg) !important;
+        background-color:  rgba(255,255,255,0.9);
+        z-index: 1;
+        scale: 1;
+        animation-fill-mode: forwards;
+        animation: bounceAnimation;
+        animation-duration: .3s;
+      }
+      &:not(:first-child) {
+        margin-top: -5rem;
+      }
+      
+      &:nth-child(odd) {
+        transform: skewX(-15deg) !important;
+        margin-left: 10rem;
+        margin-right: 0rem;
+
+        &:hover {
+          transform: skewX(0deg) !important;
+        }
+      }
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 80px auto;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+
+      img {
+        border-radius: 100%;
+        width: 80px;
+        background-color:  $neutral-color-low-medium;
+      }
+
+      h5 {
+        font-size: 1.5rem;
+      }
+      h6 {
+        color:  $neutral-color-low-medium;
+        font-size: .8rem;
+        word-wrap: break-word;
+      }
+    }
+
+    p {
+      padding-left: 6rem;
+      
+      @media (max-width: $mobile) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@keyframes bounceAnimation {
+  0% {
+    scale: .9;
+  }
+  50% {
+    scale: .8;
+  }
+  100% {
+    scale: 1;
+  }
+}

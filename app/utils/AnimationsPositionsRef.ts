@@ -39,7 +39,7 @@ export const ANIMATIONS_POSITIONS_DESKTOP: {
   FightingIdle: {
     y: -1,
     x: 0,
-    z: -0.2,
+    z: -0.4,
     rotationY: 0.7
   },
   Trippin: {
@@ -87,8 +87,8 @@ export const ANIMATIONS_POSITIONS_DESKTOP: {
   PunchingBag: {
     y: -.9,
     x: 0,
-    z: -.2,
-    rotationY: 0.25
+    z: -.4,
+    rotationY: 1
   },
   Run: {
     y: -.5,
@@ -99,8 +99,8 @@ export const ANIMATIONS_POSITIONS_DESKTOP: {
   ShootingArrow: {
     y: -.9,
     x: 0,
-    z: 0,
-    rotationY: 0
+    z: -.6,
+    rotationY: 1
   },
   WalkInCircle: {
     y: -.9,
