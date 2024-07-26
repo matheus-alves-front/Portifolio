@@ -55,7 +55,7 @@ const Skills: {
   },
   {
     name: 'Typescript',
-    level: '80%',
+    level: '90%',
     texts: [
       'I only use Typescript in my projects, the IDE helps me a lot when I`m coding',
       'Undestand the changes between types and interface',
@@ -95,7 +95,7 @@ const Skills: {
   },
   {
     name: 'Node.js',
-    level: '60%',
+    level: '80%',
     texts: [
       'Node.js is about everything',
       'If you are a web developer you MUST learn about Node.js',
@@ -105,7 +105,7 @@ const Skills: {
   },
   {
     name: 'Nest.js',
-    level: '60%',
+    level: '80%',
     texts: [
       'This is my main stack when I`m building a fullstack application',
       'When I was coding on node.js, I hate because is very ugly',

@@ -9,6 +9,12 @@ export type RecommendationsType = {
 }
 
 export const RECOMMENDATIONS: RecommendationsType[] = [
+    {
+      name: "Ricardo Ferreira",
+      occupation: "Backend software engineer Magento | PHP | Golang | E-commerce | Laravel | NodeJS | JAVA",
+      profilePic: '/assets/recommendations/ricardo.jpeg',
+      recommendation: "Matheus is an excellent professional, always willing to help and learn new technologies to do his job in the best possible way, his deliveries are of high quality and beyond expectations. It was a great pleasure working by your side my friend, keep it up."
+  },
   {
       name: "Diego Magalhães",
       occupation: "Front-end Developer | ReactJS | TypeScript |Next.JS",

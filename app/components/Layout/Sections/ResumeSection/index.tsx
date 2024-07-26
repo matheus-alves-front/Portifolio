@@ -6,8 +6,13 @@ import Link from "next/link";
 
 const COMPANIES = [
   {
+    name: 'Kubikware',
+    title: 'Backend',
+    url: 'https://speaky.com/'
+  },
+  {
     name: 'Speaky',
-    title: 'Front-end Sr',
+    title: 'Front-end',
     url: 'https://speaky.com/'
   }, 
   {

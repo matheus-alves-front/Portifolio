@@ -1,5 +1,4 @@
 "use client"
-import Typical from 'react-typical'
 import styles from './Apresentation.module.scss'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { archivoBlackFont, archivoFont } from '@/app/utils/nextFonts'
@@ -9,12 +8,13 @@ import { TfiGame } from "react-icons/tfi";
 import { Typewriter } from 'react-simple-typewriter'
 
 const TYPE_ABOUT_MATHEUS = [
-  'Front-end',
   'Full-stack',
+  'Back-end',
+  'Front-end',
   'Jedi',
   'Skater',
+  'Gearhead',
   'Crazy',
-  'Gearhead'
 ]
 
 export function ApresentationSection() {
