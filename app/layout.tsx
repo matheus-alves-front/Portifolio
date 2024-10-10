@@ -6,8 +6,8 @@ import { ReactNode } from 'react'
 export const runtime = 'edge'
 
 export const metadata: Metadata = {
-  title: 'Matheus Alves Front-end',
-  description: 'Seja bem Vindo ao meu Website PWA (App)',
+  title: 'Matheus Alves Full-Stack',
+  description: 'Welcome to my PWA website! Here you can find my socials and check about my skills.',
   manifest: "/manifest.json",
   openGraph: {
     images: '/assets/foto-perfil.jpg' 
