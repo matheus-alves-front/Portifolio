@@ -9,7 +9,13 @@ export type RecommendationsType = {
 }
 
 export const RECOMMENDATIONS: RecommendationsType[] = [
-    {
+  {
+    name: "Hans Miranda",
+    occupation: "IT Project Manager with an affinity for developing high performance software development teams",
+    profilePic: '/assets/recommendations/hans.jpeg',
+    recommendation: "I had the privilege of collaborating with Matheus on a development project. Matheus demonstrated exceptional skills in documenting legacy code and integrations, which not only freed up the rest of the team but also allowed us to simultaneously build new features."
+  },
+  {
       name: "Ricardo Ferreira",
       occupation: "Backend software engineer Magento | PHP | Golang | E-commerce | Laravel | NodeJS | JAVA",
       profilePic: '/assets/recommendations/ricardo.jpeg',
