@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     shortcut: '/icons/nextjs-neon.png',
     apple: '/icons/nextjs-neon.png',
     other: {
-      rel: '/icons/nextjs-neon.png',
-      url: '/icons/nextjs-neon.png',
+      rel: '/assets/foto-perfil.jpg',
+      url: '/assets/foto-perfil.jpg',
     },
   }
 }
